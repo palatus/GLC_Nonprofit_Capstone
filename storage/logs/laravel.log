@@ -1,0 +1,150 @@
+[2020-11-04 20:50:19] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-04 21:08:40] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-06 18:51:20] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-09 18:53:24] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:02:52] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:11:40] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at /home/ec2-user/environment/glc/vendor/symfony/console/Application.php:651)
+[stacktrace]
+#0 /home/ec2-user/environment/glc/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('ui')
+#1 /home/ec2-user/environment/glc/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/ec2-user/environment/glc/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-11-11 18:11:41] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:17:31] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:31:54] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:35:05] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:39:51] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:43:41] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 18:53:58] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:00:57] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:04:39] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:08:15] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:09:48] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:12:47] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:15:02] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:20:30] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:26:51] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:33:26] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:41:52] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-11 19:47:50] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-18 09:04:17] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-18 09:04:54] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-18 09:05:21] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-19 19:57:34] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-19 19:58:55] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-19 20:14:15] local.ERROR: Class 'PDO' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class 'PDO' not found at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:1236)
+[stacktrace]
+#0 {main}
+"} 
+[2020-11-19 20:27:52] local.ERROR: Database (/home/ec2-user/environment/glc/database/database.sqlite) does not exist. (SQL: select * from sqlite_master where type = 'table' and name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 0): Database (/home/ec2-user/environment/glc/database/database.sqlite) does not exist. (SQL: select * from sqlite_master where type = 'table' and name = migrations) at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, InvalidArgumentException(code: 0): Database (/home/ec2-user/environment/glc/database/database.sqlite) does not exist. at /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connectors/SQLiteConnector.php:34)
+[stacktrace]
+#0 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from s...', Array, Object(Closure))
+#1 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Connection.php(333): Illuminate\\Database\\Connection->run('select * from s...', Array, Object(Closure))
+#2 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(73): Illuminate\\Database\\Connection->select('select * from s...', Array)
+#3 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(156): Illuminate\\Database\\Schema\\Builder->hasTable('migrations')
+#4 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(545): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#13 /home/ec2-user/environment/glc/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /home/ec2-user/environment/glc/vendor/symfony/console/Application.php(992): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/ec2-user/environment/glc/vendor/symfony/console/Application.php(255): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/ec2-user/environment/glc/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/ec2-user/environment/glc/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/ec2-user/environment/glc/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
