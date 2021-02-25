@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>House of Hope</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -87,6 +87,7 @@
                 	
                     <!-- I'm leaving these here as temporary links to key established pages -->
                     <a href="{{ route('aboutus') }}">About Us</a>
+                    <a href="{{ route('events') }}">Events</a>
 
                     
                 </div>
