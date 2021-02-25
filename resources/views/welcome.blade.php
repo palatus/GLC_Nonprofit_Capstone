@@ -79,15 +79,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hello 
+                    GLC House of Hope
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                
+                	
+                    <!-- I'm leaving these here as temporary links to key established pages -->
+                    <a href="{{ route('aboutus') }}">About Us</a>
+
+                    
                 </div>
             </div>
         </div>
