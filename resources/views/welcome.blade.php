@@ -88,6 +88,8 @@
                     <!-- I'm leaving these here as temporary links to key established pages -->
                     <a href="{{ route('aboutus') }}">About Us</a>
                     <a href="{{ route('events') }}">Events</a>
+                    <a href="{{ route('contact') }}">Contact Us</a>
+                    <a href="{{ route('home') }}">Home</a>
 
                     
                 </div>

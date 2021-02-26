@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/Home', 'HomeController@index')->name('home');
 Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
 Route::get('/Events', 'EventsController@index')->name('events');
+Route::get('/Contact Us', 'ContactController@index')->name('contact');
 
 Auth::routes();
 
