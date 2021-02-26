@@ -90,6 +90,7 @@
                     <a href="{{ route('events') }}">Events</a>
                     <a href="{{ route('contact') }}">Contact Us</a>
                     <a href="{{ route('home') }}">Home</a>
+                    <a href="{{ route('volunteers') }}">Volunteers</a>
 
                     
                 </div>
