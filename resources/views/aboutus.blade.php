@@ -19,8 +19,9 @@
         </style>
     </head>
     <body>
+    
 		@include('nav')
-		<div> Test </div>
+		
 		@include('footer')
                 
                 <script src= "{{ mix('/js/app.js') }}"></script>
