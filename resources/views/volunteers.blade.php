@@ -60,7 +60,7 @@
                     <div class="row mbottom">
                     
 						@php ($i = 1)
-						@php ($limit = 3)
+						@php ($limit = 4)
                 		@foreach($volunteers as $volunteer)
     						
     						<div class="col margin1 text-center">
@@ -69,7 +69,7 @@
                   						
             						</div>
         						</div>
-        						<div class = 'mtoph'>{{$volunteer['name']}}</div>
+        						<div class = 'mtoph volunteer{{$i}}'>{{$volunteer['name']}}</div>
     						</div>
 						
     						@if($i % $limit == 0)

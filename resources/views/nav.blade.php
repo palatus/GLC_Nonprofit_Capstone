@@ -25,6 +25,16 @@ nav{
     background-color:#343a40;
 
 }
+
+a{
+
+    -webkit-transition: all 0.25s 0s ease-out;
+    -moz-transition: all 0.25s 0s ease-out;
+    -o-transition: all 0.25s 0s ease-out;
+    transition: all 0.25s 0s ease-out;
+    background-color: rgba(0,0,0,0);
+    
+}
 .navbar a {
     color: white;
 }
@@ -33,13 +43,20 @@ a:hover.nav-link{
 }
 
 .transborder {
-    -webkit-transition: box-shadow 0.25s 0s ease-out;
-    -moz-transition: box-shadow 0.25s 0s ease-out;
-    -o-transition: box-shadow 0.25s 0s ease-out;
-    transition: box-shadow 0.25s 0s ease-out;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+    color: white;
+    -webkit-transition: all 0.25s 0s ease-out;
+    -moz-transition: all 0.25s 0s ease-out;
+    -o-transition: all 0.25s 0s ease-out;
+    transition: all 0.25s 0s ease-out;
+
+    
 }
-.transborder:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+.transborder:hover { 
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    
+}
 
 .box {
   position: relative;
@@ -63,7 +80,7 @@ a:hover.nav-link{
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   opacity: 0;
   -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -91,17 +108,17 @@ a:hover.nav-link{
     <div class="navbar-collapse collapse w-100" id="navbar">
         <ul class=" navbar-nav ml-auto w-100 justify-content-end">
         
-            <li class="nav-item msides transborder">
-                <a class="nav-link" href="/login">Login</a>
+            <li class="nav-item msides">
+                <a class="nav-link transborder" href="/login">Login</a>
             </li>
-            <li class="nav-item msides transborder">
-                <a class="nav-link" href="/">What We Do</a>
+            <li class="nav-item msides">
+                <a class="nav-link transborder" href="/">What We Do</a>
             </li>
-            <li class="nav-item msides transborder">
-                <a class="nav-link" href="/">Outreach</a>
+            <li class="nav-item msides">
+                <a class="nav-link transborder" href="/">Outreach</a>
             </li>
-            <li class="nav-item msides transborder">
-                <a class="nav-link" href="/">Get Involved</a>
+            <li class="nav-item msides">
+                <a class="nav-link transborder" href="/">Get Involved</a>
             </li>
 
             <li class="nav-item msides mtop">
