@@ -10,7 +10,7 @@
     margin-top:2em
 }
 .mbottom{
-    margin-bottom:0.5em
+    margin-bottom:0.5em;
 }
 .msides{
 

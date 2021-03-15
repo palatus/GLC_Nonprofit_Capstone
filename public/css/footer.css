@@ -1,11 +1,12 @@
-.sponsor {
-    max-width: 100%;
-    height: auto;
+
+
+#footer {
+  position: absolute;
+  width: 100%;
+
 }
-#footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
+#footer img {
+  max-width: 50%;
+  max-height: 50%;
 }
 

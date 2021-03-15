@@ -41,11 +41,21 @@
             background-repeat: no-repeat; 
             background-size: cover; 
           }
+          .vAction{
+              vertical-align: top;
+              transition: opacity 0.3s;
+              -webkit-transition: opacity 0.3s;
+              opacity: 1;
+          }
 
         </style>
     </head>
     <body>
 		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
+        <script src= "{{ mix('/js/app.js') }}"></script>
+
 		@include('nav')
         
         <div class="container-fluid">
@@ -64,12 +74,12 @@
                 		@foreach($volunteers as $volunteer)
     						
     						<div class="col margin1 text-center">
-    							<div class = "box imgBg" style = "background-image: url('/images/user/{{$volunteer['img']}}');">
+    							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['img']}}');">
             						<div class="text-center">
-                  						
+                  									
             						</div>
         						</div>
-        						<div class = 'mtoph volunteer{{$i}}'>{{$volunteer['name']}}</div>
+        						<div id = 'name{{$loop->iteration}}' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
     						</div>
 						
     						@if($i % $limit == 0)
@@ -100,11 +110,27 @@
 		</div>
 		
 		@include('footer')
+        		
+        <script>
+                    
+            window.onload = function() {
+                if (window.jQuery) {  
+                } else {
+                    alert("There was an issue loading JQuery scripts!");
+                }
+            }
+
+            $(document).on('mouseover', '.box', function () {
+                $('.vAction').css("opacity","0");
+                $ind = $(this).attr('id').replace(/\D/g,'');
+                $('#name'+$ind).css("opacity","1");
+            });
+            $(document).on('mouseout', '.box', function () {
+                $('.vAction').css("opacity","1");
+            });
+            
+        </script>
 		
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
-        <script src= "{{ mix('/js/app.js') }}"></script>
 		
     </body>
 </html>

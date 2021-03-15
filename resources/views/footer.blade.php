@@ -1,18 +1,3 @@
-
-<style>
-
-#footer {
-  position: fixed;
-  width: 100%;
-  height: 10em;            /* Footer height */
-}
-#footer img {
-  max-width: 50%;
-  max-height: 50%;
-}
-
-</style>
-
 <footer id="footer" class="bg-dark text-center text-white">
 
   <!-- Grid container -->
@@ -55,7 +40,7 @@
   </div>
   
   <!-- Copyright -->
-  <div class="text-center p-3" style="margin-top:-5em"; background-color: rgba(255, 255, 255, 0.2);">
+  <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
     © 2020 GLC House of H.O.P.E.
   </div>
   
