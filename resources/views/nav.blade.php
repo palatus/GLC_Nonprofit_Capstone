@@ -1,35 +1,111 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="d-flex flex-grow-1">
-        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-        <a class="navbar-brand d-none d-lg-inline-block" href="#">
-            <img class="float-left" id="logo" src="{{ url('/images/glcLogo.webp') }}" alt="Logo"/>
-            GLC|House of Hope
-        </a>
-        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
-            <img src="//placehold.it/40?text=LOGO" alt="logo">
-        </a>
-        <div class="w-100 text-right">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item nav-active">What We Do</a>
+<style>
+
+.mtopn{
+    margin-top:-1em
+}
+.mtop{
+    margin-top:0.5em
+}
+.mtoph{
+    margin-top:2em
+}
+.mbottom{
+    margin-bottom:0.5em
+}
+.msides{
+
+    margin-left:1em;
+    margin-right:1em;
+
+}
+
+nav{
+
+    height:100%;
+    background-color:#343a40;
+
+}
+.navbar a {
+    color: white;
+}
+a:hover.nav-link{
+    background-color: grey;
+}
+
+.transborder {
+    -webkit-transition: box-shadow 0.25s 0s ease-out;
+    -moz-transition: box-shadow 0.25s 0s ease-out;
+    -o-transition: box-shadow 0.25s 0s ease-out;
+    transition: box-shadow 0.25s 0s ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.transborder:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+
+.box {
+  position: relative;
+  display: inline-block;
+  width: 10em;
+  height: 10em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+}
+
+.box:hover::after {
+    opacity: 1;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-md justify-content-center">
+    <a href="/" class="navbar-brand  mr-auto">
+    <img class="float-left mbottom mtopn" id="logo" src="{{ url('/images/glcLogo.webp') }}" alt="Logo"/>
+    <span class = "mbottom" >GLC|House of Hope</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" id="navbar">
+        <ul class=" navbar-nav ml-auto w-100 justify-content-end">
+        
+            <li class="nav-item msides transborder">
+                <a class="nav-link" href="/login">Login</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Outreach</a>
+            <li class="nav-item msides transborder">
+                <a class="nav-link" href="/">What We Do</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Get Involved</a>
+            <li class="nav-item msides transborder">
+                <a class="nav-link" href="/">Outreach</a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Login</a>
+            <li class="nav-item msides transborder">
+                <a class="nav-link" href="/">Get Involved</a>
             </li>
-            <li class="nav-item">
-            <button type="button" id="donateBtn" class="btn btn-primary">Donate</button>
+
+            <li class="nav-item msides mtop">
+                <button type="button" id="donateBtn" class="btn btn-primary">Donate</button>
             </li>
             
         </ul>
