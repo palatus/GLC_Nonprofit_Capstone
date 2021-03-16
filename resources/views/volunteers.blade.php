@@ -72,28 +72,28 @@
 
 		@include('nav')
         
-        <div class="container-fluid">
+        <div style = 'width:90%;' class="mbottom container-fluid">
         	<div class="row">
         		<div class="col-md-12">
         		
-        			<h3 class="margin1 text-center cw">
+        			<h3 class="text-center cw mbottomh">
         				Our Volunteers
         			</h3>
             		
             		
-                    <div class="row mbottom">
+                    <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2);' class="text-center row mbottom mtoph ptop innershadow">
                     
 						@php ($i = 1)
-						@php ($limit = 4)
+						@php ($limit = 5)
                 		@foreach($volunteers as $volunteer)
     						
-    						<div class="col margin1 text-center">
+    						<div class="col text-center mtoph pbottom mbottomh">
     							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['img']}}');">
             						<div class="text-center">
                   									
             						</div>
         						</div>
-        						<div id = 'name{{$loop->iteration}}' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
+        						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
     						</div>
 						
     						@if($i % $limit == 0)

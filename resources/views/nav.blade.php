@@ -1,5 +1,10 @@
 <style>
-
+.pbottom{
+    padding-bottom:1em;
+}
+.ptop{
+    padding-top:1em;
+}
 .mtopn{
     margin-top:-1em
 }
@@ -11,6 +16,9 @@
 }
 .mbottom{
     margin-bottom:0.5em;
+}
+.mbottomh{
+    margin-bottom:1em;
 }
 .msides{
 
@@ -34,6 +42,11 @@ a{
     background-color: rgba(0,0,0,0);
     
     
+}
+.innershadow{
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
 }
 .navbar a {
     color: white;

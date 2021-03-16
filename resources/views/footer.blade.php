@@ -1,7 +1,7 @@
-<footer id="footer" class="bg-dark text-center text-white">
+<footer id="footer" class="text-center text-white">
 
   <!-- Grid container -->
-  <div class="container">
+  <div id = 'fcontainer' class="container">
     <!-- Social media -->
     <section class="mb-4 row">
       <!-- Facebook -->
@@ -23,16 +23,24 @@
     <!-- Sponsors -->
     <section id="sponsors" class="row text-center">
         <div class="col-12 col-md-3">
-            <img class="sponsor img-fluid" src="{{ url('/images/albertsonsCompanies.png') }}">
+            <div class = 'text-center'>
+            	<img class="sponsor img-fluid" src="{{ url('/images/albertsonsCompanies.png') }}">
+            </div>
         </div>
         <div class="col-12 col-md-3">
-            <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
+            <div class = 'text-center'>
+                <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
+            </div>
         </div>
         <div class="col-12 col-md-3">
-            <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
+            <div class = 'text-center'>
+                <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
+            </div>
         </div>
         <div class="col-12 col-md-3">
-            <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
+            <div class = 'text-center'>
+                <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
+            </div>
         </div>
     </section>
     <!-- Section: Text -->
