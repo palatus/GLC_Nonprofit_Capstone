@@ -25,7 +25,6 @@ nav{
     background-color:#343a40;
 
 }
-
 a{
 
     -webkit-transition: all 0.25s 0s ease-out;
@@ -34,6 +33,7 @@ a{
     transition: all 0.25s 0s ease-out;
     background-color: rgba(0,0,0,0);
     
+    
 }
 .navbar a {
     color: white;
@@ -41,19 +41,19 @@ a{
 a:hover.nav-link{
     background-color: grey;
 }
-
 .transborder {
 
+    padding-left: 1em !important;
+    padding-right: 1em !important;
     color: white;
     -webkit-transition: all 0.25s 0s ease-out;
     -moz-transition: all 0.25s 0s ease-out;
     -o-transition: all 0.25s 0s ease-out;
     transition: all 0.25s 0s ease-out;
-
     
 }
 .transborder:hover { 
-
+    
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
     
 }
@@ -109,7 +109,7 @@ a:hover.nav-link{
         <ul class=" navbar-nav ml-auto w-100 justify-content-end">
         
             <li class="nav-item msides">
-                <a class="nav-link transborder" href="/login">Login</a>
+                <a class="transborder nav-link " href="/login">Login</a>
             </li>
             <li class="nav-item msides">
                 <a class="nav-link transborder" href="/">What We Do</a>

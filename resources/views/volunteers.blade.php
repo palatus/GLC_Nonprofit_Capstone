@@ -128,7 +128,7 @@
         <script>
                     
             window.onload = function() {
-                if (window.jQuery) {  
+                if (window.jQuery) {
                 } else {
                     alert("There was an issue loading JQuery scripts!");
                 }
