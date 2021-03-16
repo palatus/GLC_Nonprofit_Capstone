@@ -41,16 +41,30 @@
             background-repeat: no-repeat; 
             background-size: cover; 
           }
+          .cw{
+            color:white;
+          }
           .vAction{
+              color:white;
               vertical-align: top;
               transition: opacity 0.3s;
               -webkit-transition: opacity 0.3s;
               opacity: 1;
           }
+          .bg001{
+            background-image: url("images/bg/bg001.png");
+          }
+          .bg002{
+                      
+            background: #bdc3c7;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #343a40, #5d6368, #343a40);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #343a40, #5d6368, #343a40); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+          }
 
         </style>
     </head>
-    <body>
+    <body class = 'bg002'>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
@@ -62,7 +76,7 @@
         	<div class="row">
         		<div class="col-md-12">
         		
-        			<h3 class="margin1 text-center">
+        			<h3 class="margin1 text-center cw">
         				Our Volunteers
         			</h3>
             		

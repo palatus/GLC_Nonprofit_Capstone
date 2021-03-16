@@ -17,7 +17,7 @@ class VolunteerController extends Controller
             ['name' => 'Jarred', 'about' => 'Loves to help code.', 'img' => 'icon.jpg'],
             ['name' => 'George', 'about' => 'Still lost in the forest.', 'img' => 'icon.jpg'],
             ['name' => 'Maxine', 'about' => 'Can time travel!', 'img' => 'icon.jpg'],
-            ['name' => 'Herald', 'about' => 'Has a blue tooth.', 'img' => 'man.webp'],
+            ['name' => 'Harald', 'about' => 'Has a blue tooth.', 'img' => 'man.webp'],
             ['name' => 'Sandy', 'about' => 'Knows sea animals.', 'img' => 'icon.jpg'],
             ['name' => 'Sandy', 'about' => 'Knows sea animals.', 'img' => 'icon.jpg'],
             ['name' => 'Sandy', 'about' => 'Knows sea animals.', 'img' => 'icon.jpg'],
