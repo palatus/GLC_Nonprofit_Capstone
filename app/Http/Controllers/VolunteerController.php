@@ -11,7 +11,7 @@ class VolunteerController extends Controller
         
         // Should get double array of KV pairs from DB for volunteers
         // string for name, string describing person, string for resource location
-        
+        $style=parent::getStyle();
         $volunteers = [
             
             ['name' => 'Jarred', 'about' => 'Loves to help code.', 'img' => 'icon.jpg'],
@@ -30,7 +30,7 @@ class VolunteerController extends Controller
             
         ];
         
-        return view('volunteers',['volunteers' => $volunteers]);
+        return view('volunteers',['volunteers' => $volunteers,'styleCode' => $style]);
         
     }
     

@@ -15,56 +15,11 @@
 
         <!-- Styles -->
         <style>
-            .styleImg{
-            
-                width: 20%;
-                margin: auto;
-            
-            }
-          .thumbnail {
-            height: 50px;
-          }
-          .thumbnail img {
-            display: block;
-            width: auto;
-            height: 100%;
-          }
-          .margin1{
-            margin-top: 1em !important;
-            margin-bottom: 1em !important;
-          }
-          .mbottom{
-            margin-bottom: 1em !important;
-          }
-          .imgBg{
-            background-position: center; 
-            background-repeat: no-repeat; 
-            background-size: cover; 
-          }
-          .cw{
-            color:white;
-          }
-          .vAction{
-              color:white;
-              vertical-align: top;
-              transition: opacity 0.3s;
-              -webkit-transition: opacity 0.3s;
-              opacity: 1;
-          }
-          .bg001{
-            background-image: url("images/bg/bg001.png");
-          }
-          .bg002{
-                      
-            background: #bdc3c7;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to top, #343a40, #5d6368, #343a40);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to top, #343a40, #5d6368, #343a40); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-          }
 
         </style>
     </head>
-    <body class = 'bg002'>
+    <body style = 'background-color:{{$styleCode["1"]}}'>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
@@ -73,10 +28,12 @@
 		@include('nav')
         
         <div style = 'width:90%;' class="mbottom container-fluid">
+        
+        	<button id = 'svbutton' type="button" class="btn btn-outline-primary">Show Volunteers</button>
         	<div class="row">
         		<div class="col-md-12">
         		
-        			<h3 class="text-center cw mbottomh">
+        			<h3 class="text-center cw mbottomh ptrigger">
         				Our Volunteers
         			</h3>
             		
@@ -141,6 +98,18 @@
             });
             $(document).on('mouseout', '.box', function () {
                 $('.vAction').css("opacity","1");
+            });
+                   
+            $(document).on('click', '#svbutton', function () {
+            	
+            	$containerOp = $('.ptrigger').parent().parent().css("opacity");
+            	if($containerOp == 0){
+            		$containerOp = 1;
+            	}else if($containerOp == 1){
+            		$containerOp = 0;
+            	}
+                $('.ptrigger').parent().parent().css("opacity",$containerOp);
+                
             });
             
         </script>

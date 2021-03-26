@@ -9,7 +9,11 @@ class AboutUsController extends Controller
     
     public function index(){
         
-        return view('aboutus');
+        $style=parent::getStyle();
+        
+        
+        
+        return view('aboutus' , ['styleCode' => $style]);
         
     }
     
