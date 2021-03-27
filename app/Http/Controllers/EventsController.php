@@ -39,6 +39,13 @@ class EventsController extends Controller
         foreach ($events as $event) {
             
             $begin = strtotime($event['begins']);
+            $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['begins'])[0])[0];
+            
+            $time = date("h.i A", $begin);
+            
+            $event['time'] = $time;
+            $event['year'] = explode("-",explode(" ",$event['begins'])[0])[2];
+            
             $end = strtotime($event['ends']);
             $log = '';
             

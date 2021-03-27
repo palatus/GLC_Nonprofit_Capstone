@@ -57,7 +57,7 @@
                             
         			</div>
 
-					<div class = 'mtoph mbottomh' id = 'eventDisplay'>
+					<div class = 'vmargin' id = 'eventDisplay'>
 					
 						<div id = 'subDisplay1'>
 							
@@ -70,15 +70,20 @@
                                     			<div style = 'color:white;' class = 'cGroup mtoph mbottomh width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div class="alert alert-dark card-header" role="alert">
-                                                        {{$closed['name']}}
+                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                      
+													  <div class = 'bigtext'>{{$closed['name']}}</div>
+                                                        
+                                                      <div>
+  													  	<span>{{$closed['date']}}  {{$closed['time']}}</span>
                                                       </div>
-                                                      <div class="card-body">
-                                                        <p class="card-text">{{$closed['about']}}</p>
-                                                        <a href="#" class="btn btn-primary">Sign Up</a>
+                                                      
                                                       </div>
-                                                      <img src="url('/images/events/{{$closed['img']}}')" class="card-img-bottom" alt="...">
-                                                    </div>
+                                                          <div class="card-body mtoph mbottomh">
+                                                          <h2>EVENT OVER</h2>
+                                                            <p class="card-text mtoph mbottomh">{{$closed['about']}}</p>
+                                                          </div>
+                                                      </div>
                                     			
                                     			</div>
                                     		</div>
@@ -93,15 +98,18 @@
                                     			<div style = 'color:white;' class = 'sGroup mtoph mbottomh width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div class="alert alert-dark card-header" role="alert">
-                                                        {{$soon['name']}}
+                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                        <div class = 'bigtext'>{{$soon['name']}} </div>
+                                                        
+                                                      <div>
+  													  	<span>{{$soon['date']}}  {{$soon['time']}}</span>
                                                       </div>
-                                                      <div class="card-body">
-                                                        <p class="card-text">{{$soon['about']}}</p>
-                                                        <a href="#" class="btn btn-primary">Sign Up</a>
                                                       </div>
-                                                      <img src="url('/images/events/{{$soon['img']}}')" class="card-img-bottom" alt="...">
-                                                    </div>
+                                                      <div class="card-body mtoph mbottomh">
+                                                        <p class="card-text mtoph mbottomh">{{$soon['about']}}</p>
+                                                        <a href="#" class="btn btn-primary mtoph">Sign Up</a>
+                                                      </div>
+                                                     </div>
                                     			
                                     			</div>
                                     		</div>
@@ -115,14 +123,21 @@
                                     			<div style = 'color:white;' class = 'pGroup mtoph mbottomh width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div class="alert alert-dark card-header" role="alert">
-                                                        {{$planned['name']}}
+                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                        
+                                                        <div class = 'bigtext'>{{$planned['name']}} </div>
+                                                        
+                                                      <div>
+  													  	<span>{{$planned['date']}}  {{$planned['year']}}  {{$planned['time']}}</span>
                                                       </div>
-                                                      <div class="card-body">
-                                                        <p class="card-text">{{$planned['about']}}</p>
-                                                        <a href="#" class="btn btn-primary">Sign Up</a>
+                                                      
                                                       </div>
-                                                      <img src="url('/images/events/{{$planned['img']}}')" class="card-img-bottom" alt="...">
+                                                      
+                                                      <div class="card-body mtoph mbottomh">
+                                                        <p class="card-text mtoph mbottomh">{{$planned['about']}}</p>
+                                                        <a href="#" class="btn btn-primary mtoph">Sign Up</a>
+                                                      </div>
+                                                      
                                                     </div>
                                     			
                                     			</div>
@@ -133,15 +148,57 @@
 							
 						</div>
 					
+						<div class='vmargin'> </div>
+					
 					</div>
 					
         <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
-            <div>Events Have Been Split Into 3 Sections</div>
-            <div>Each Button Will Reveal Relevant Displays</div>
+
         </div>
-        <div class='mtoph mbottomh'></div>
 					
 					<script>
+					
+                        function setGroups(groupcode) {
+                            
+                            var code = groupcode;
+                        	
+                         	$('#closedGroup').css('opacity',code[0]);
+                        	$('#soonGroup').css('opacity',code[1]);
+                        	$('#plannedGroup').css('opacity',code[2]);
+                        	
+                        	sh(code[0],$('#closedGroup'),250);
+                        	sh(code[1],$('#soonGroup'),250);
+                        	sh(code[2],$('#plannedGroup'),250);
+                        	
+                            $('.cGroup').css('opacity',code[0]);
+                            $('.sGroup').css('opacity',code[1]);
+                            $('.pGroup').css('opacity',code[2]);
+                            
+                        	sh(code[0],$('.cGroup'),250*code[0]);
+                        	sh(code[1],$('.sGroup'),250*code[1]);
+                        	sh(code[2],$('.pGroup'),250*code[2]);
+                            
+                        };
+                        function sh(code,node,speed){
+                        
+                        	if(code){
+                        		node.show(speed);
+                        	} else {
+                        		node.hide(speed);
+                        	}
+                        
+                        }
+                        function init() {
+                            
+                         	$('#closedGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                        	$('#soonGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                        	$('#plannedGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                            $('.cGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                            $('.sGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                            $('.pGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                            
+                        };
+					
                         window.onload = function() {
                         
                         
@@ -150,39 +207,24 @@
                                 alert("There was an issue loading JQuery scripts!");
                             }
                             
-                         	$('#closedGroup').hide(1);
-                        	$('#soonGroup').hide(1);
-                        	$('#plannedGroup').hide(1);
-                            $('.cGroup').hide(1);
-                            $('.sGroup').hide(1);
-                            $('.pGroup').hide(1);
-                            $('.hideme').hide(1);
+							init();
                             
                         }
                                     
                         $(document).on('click', '#cgbutton', function () {
-                        	$('#closedGroup').show(200);
-                        	$('#soonGroup').hide(200);
-                        	$('#plannedGroup').hide(200);
-                            $('.cGroup').show(200);
-                            $('.sGroup').hide(200);
-                            $('.pGroup').hide(200);
+                        	
+							setGroups([1,0,0]);
+                            
                         });
                         $(document).on('click', '#ogbutton', function () {
-                        	$('#closedGroup').hide(200);
-                        	$('#soonGroup').show(200);
-                        	$('#plannedGroup').hide(200);
-                            $('.cGroup').hide(200);
-                            $('.sGroup').show(200);
-                            $('.pGroup').hide(200);
+                        
+							setGroups([0,1,0]);
+                            
                         });
                         $(document).on('click', '#pgbutton', function () {
-                         	$('#closedGroup').hide(200);
-                        	$('#soonGroup').hide(200);
-                        	$('#plannedGroup').show(200);
-                            $('.cGroup').hide(200);
-                            $('.sGroup').hide(200);
-                            $('.pGroup').show(200);
+                        
+							setGroups([0,0,1]);
+                            
                         });
 					
 					</script>

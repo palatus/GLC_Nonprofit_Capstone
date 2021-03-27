@@ -216,6 +216,12 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 }
+.bigtext {
+  font-size:2.25em;
+}
+.vmargin{
+    margin:5em,0em,5em,0em;
+}
 </style>
 
 <nav class="navbar navbar-expand-md justify-content-center">
