@@ -17,7 +17,8 @@ class Controller extends BaseController
             '1' => '#343a40',           // Primary      
             '2' => '#5d6368',           // Secondary
             '3' => '#383e42',           // Tirtiary
-            '4' => 'rgba(0,0,0,0.4)'    // Darken
+            '4' => 'rgba(0,0,0,0.4)',   // Darken
+            '5' => '#555990',           // GLC Primary
         ];
     }
     

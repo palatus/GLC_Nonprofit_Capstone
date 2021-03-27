@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
+        <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 		
         <!-- Styles -->
@@ -23,6 +24,7 @@
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
+        <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <script src= "{{ mix('/js/app.js') }}"></script>
  
         @include('nav')		
@@ -166,9 +168,9 @@
                         	$('#soonGroup').css('opacity',code[1]);
                         	$('#plannedGroup').css('opacity',code[2]);
                         	
-                        	sh(code[0],$('#closedGroup'),250);
-                        	sh(code[1],$('#soonGroup'),250);
-                        	sh(code[2],$('#plannedGroup'),250);
+                        	sh(code[0],$('#closedGroup'),250*code[0]);
+                        	sh(code[1],$('#soonGroup'),250*code[1]);
+                        	sh(code[2],$('#plannedGroup'),250*code[2]);
                         	
                             $('.cGroup').css('opacity',code[0]);
                             $('.sGroup').css('opacity',code[1]);
