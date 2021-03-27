@@ -75,7 +75,7 @@
 													  <div class = 'bigtext'>{{$closed['name']}}</div>
                                                         
                                                       <div>
-  													  	<span>{{$closed['date']}}  {{$closed['time']}}</span>
+  													  	<span>{{$closed['date']}}, {{$closed['year']}} &emsp; {{$closed['time']}} &horbar; {{$closed['time2']}}</span>
                                                       </div>
                                                       
                                                       </div>
@@ -102,12 +102,12 @@
                                                         <div class = 'bigtext'>{{$soon['name']}} </div>
                                                         
                                                       <div>
-  													  	<span>{{$soon['date']}}  {{$soon['time']}}</span>
+  													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
                                                       </div>
                                                       </div>
                                                       <div class="card-body mtoph mbottomh">
                                                         <p class="card-text mtoph mbottomh">{{$soon['about']}}</p>
-                                                        <a href="#" class="btn btn-primary mtoph">Sign Up</a>
+                                                        <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                      </div>
                                     			
@@ -128,14 +128,14 @@
                                                         <div class = 'bigtext'>{{$planned['name']}} </div>
                                                         
                                                       <div>
-  													  	<span>{{$planned['date']}}  {{$planned['year']}}  {{$planned['time']}}</span>
+  													  	<span>{{$planned['date']}}, {{$planned['year']}} &emsp; {{$planned['time']}} &horbar; {{$planned['time2']}}</span>
                                                       </div>
                                                       
                                                       </div>
                                                       
                                                       <div class="card-body mtoph mbottomh">
                                                         <p class="card-text mtoph mbottomh">{{$planned['about']}}</p>
-                                                        <a href="#" class="btn btn-primary mtoph">Sign Up</a>
+                                                        <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                       
                                                     </div>
@@ -177,8 +177,24 @@
                         	sh(code[0],$('.cGroup'),250*code[0]);
                         	sh(code[1],$('.sGroup'),250*code[1]);
                         	sh(code[2],$('.pGroup'),250*code[2]);
+                        	
+                        	
+                            bgroup(groupcode);
                             
                         };
+                        function bgroup(groupcode){
+                        
+                        	var set = ['#cgbutton','#ogbutton','#pgbutton'];
+                        	
+                        	for(var i = 0; i<set.length; i++){
+                        		if(groupcode[i] == 1){
+                        			$(set[i]).addClass(['bScripted']);
+                        		} else {
+                        			$(set[i]).removeClass(['bScripted']);
+                        		}
+                        	}
+                        
+                        }
                         function sh(code,node,speed){
                         
                         	if(code){

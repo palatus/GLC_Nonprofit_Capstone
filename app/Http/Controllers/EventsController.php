@@ -17,8 +17,8 @@ class EventsController extends Controller
             
             ['name' => 'GLC Old Event Test', 'about' => 'Backend Functionality Testing', 'img' => 'temp.png', 'begins' => '24-03-2021 12:00:00', 'ends' => '24-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
             ['name' => 'March\'s End Drive', 'about' => 'Come get some baked march foods, while we talk about...', 'img' => 'temp.png', 'begins' => '29-03-2021 12:00:00', 'ends' => '30-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Food Drive for Philly', 'about' => 'Help get food to the needy with us this upcoming...', 'img' => 'temp.png', 'begins' => '29-03-2022 12:00:00', 'ends' => '30-03-2022 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Storm Philadelphia', 'about' => 'Let\'s Gather en masse For The 2030 fling!', 'img' => 'temp.png', 'begins' => '29-03-2030 12:00:00', 'ends' => '30-03-2030 16:00:00','registered' => '[0,1,2,3,4]'],
+            ['name' => 'Food Drive for Philly', 'about' => 'Help get food to the needy with us this upcoming...', 'img' => 'temp.png', 'begins' => '01-03-2022 12:00:00', 'ends' => '02-01-2022 16:00:00','registered' => '[0,1,2,3,4]'],
+            ['name' => 'Storm Philadelphia', 'about' => 'Let\'s Gather en masse For The 2030 fling!', 'img' => 'temp.png', 'begins' => '05-08-2030 10:00:00', 'ends' => '05-08-2030 14:00:00','registered' => '[0,1,2,3,4]'],
             
         ];
                
@@ -39,11 +39,14 @@ class EventsController extends Controller
         foreach ($events as $event) {
             
             $begin = strtotime($event['begins']);
+            $end = strtotime($event['ends']);
             $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['begins'])[0])[0];
             
             $time = date("h.i A", $begin);
+            $time2 = date("h.i A", $end);
             
             $event['time'] = $time;
+            $event['time2'] = $time2;
             $event['year'] = explode("-",explode(" ",$event['begins'])[0])[2];
             
             $end = strtotime($event['ends']);

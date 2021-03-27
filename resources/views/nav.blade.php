@@ -192,6 +192,11 @@ a:hover.nav-link {
             .btn:selected{
                 border:2px solid #1d5f96;
             }
+            .btn:active{
+                border:2px solid #1d5f96;
+                background-color: #1d5f96;
+                color:white;
+            }
             .btn-outline-primary:hover{
                 background-color: #1d5f96;
                 color:white;
@@ -221,6 +226,18 @@ body{
 }
 .vmargin{
     margin:5em,0em,5em,0em;
+}
+.bScripted{
+    background-color:#2e2e2e;
+    color:#808080;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-color:grey;
+}
+.widththird{
+    width:33%;
+}
+.widthquarter{
+    width:25%;
 }
 </style>
 

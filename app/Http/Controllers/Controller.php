@@ -12,6 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     static function getStyle(){
+
         return [
             '1' => '#343a40',           // Primary      
             '2' => '#5d6368',           // Secondary
@@ -19,6 +20,8 @@ class Controller extends BaseController
             '4' => 'rgba(0,0,0,0.4)'    // Darken
         ];
     }
+    
+
     
 }
 
