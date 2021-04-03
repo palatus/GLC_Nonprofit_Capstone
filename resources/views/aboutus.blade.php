@@ -33,10 +33,11 @@
         		<div class="col-md-12 text-center innershadow">
         		
         			<h3 class="text-center mtoph mbottomh">
-        				We are...
+        				Need Mrs Jackson to put something here
         				
         				
         			</h3>
+        			
 					
         <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
 

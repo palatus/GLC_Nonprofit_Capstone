@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
+        <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 		
         <!-- Styles -->
@@ -24,7 +25,6 @@
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
-        <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <script src= "{{ mix('/js/app.js') }}"></script>
  
         @include('nav')		
@@ -33,8 +33,8 @@
         	<div class="row">
         		<div class="col-md-12 text-center innershadow">
         		
-        			<h3 class="text-center mtoph mbottomh">
-        				Events List
+        			<h3 class="text-center mtm">
+        				
         				
         				
         			</h3>
@@ -58,18 +58,29 @@
                             </table>                            
                             
         			</div>
+        			
+        			<div id='preamble' class = 'pbottomh ptoph'>
+        			
+        				<h2 class = 'mtm'> Select Any Event Category To View or Sign Up for An Event </h2>
+        			
+        			</div>
 
-					<div class = 'vmargin' id = 'eventDisplay'>
+					<div style = 'font-size:1.25em;' class = 'vmargin' id = 'eventDisplay'>
 					
 						<div id = 'subDisplay1'>
+
+							<div id = 'closedGroup' class = ''>
 							
-							
-							
-							<div id = 'closedGroup mtoph mbottomh'>
+										@if(count($events['closed']) == 0)
+											<div style = 'font-size:2em;' class = 'cGroup center-text mtm' >
+												There Is No Event History Available
+											</div>
+										@endif
+										
                                 		@foreach($events['closed'] as $closed)
                                 		
                                 			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'cGroup mtoph mbottomh width75 innershadow'>
+                                    			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
                                                       <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
@@ -81,9 +92,9 @@
                                                       </div>
                                                       
                                                       </div>
-                                                          <div class="card-body mtoph mbottomh">
+                                                          <div class="card-body mtm mbh pbottomh ptoph">
                                                           <h2>EVENT OVER</h2>
-                                                            <p class="card-text mtoph mbottomh">{{$closed['about']}}</p>
+                                                            <p class="card-text mtm">{{$closed['about']}}</p>
                                                           </div>
                                                       </div>
                                     			
@@ -93,11 +104,16 @@
                                 		@endforeach
 							</div>
 							
-							<div id = 'soonGroup mtoph mbottomh'>
+							<div id = 'soonGroup' class= ''>
+										@if(count($events['soon']) == 0)
+											<div style = 'font-size:2em;' class = 'sGroup center-text mtm' >
+												No Events Are Currently Open
+											</div>
+										@endif
                                 		@foreach($events['soon'] as $soon)
                                 		
                                 			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'sGroup mtoph mbottomh width75 innershadow'>
+                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
                                                       <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
@@ -107,8 +123,8 @@
   													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
                                                       </div>
                                                       </div>
-                                                      <div class="card-body mtoph mbottomh">
-                                                        <p class="card-text mtoph mbottomh">{{$soon['about']}}</p>
+                                                      <div class="card-body mtm">
+                                                        <p class="card-text mtm pbottomh">{{$soon['about']}}</p>
                                                         <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                      </div>
@@ -118,11 +134,17 @@
                                 		@endforeach
 							</div>
 							
-							<div id = 'plannedGroup mtoph mbottomh'>
+							<div id = 'plannedGroup' class= ''>
+							
+										@if(count($events['planned']) == 0)
+											<div style = 'font-size:2em;' class = 'pGroup center-text mtm' >
+												No Events Are Currently Planned
+											</div>
+										@endif
                                 		@foreach($events['planned'] as $planned)
                                 		
                                 			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'pGroup mtoph mbottomh width75 innershadow'>
+                                    			<div style = 'color:white;' class = 'pGroup mtm width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
                                                       <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
@@ -135,8 +157,8 @@
                                                       
                                                       </div>
                                                       
-                                                      <div class="card-body mtoph mbottomh">
-                                                        <p class="card-text mtoph mbottomh">{{$planned['about']}}</p>
+                                                      <div class="card-body mtm">
+                                                        <p class="card-text mtm pbottomh">{{$planned['about']}}</p>
                                                         <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                       
@@ -154,7 +176,7 @@
 					
 					</div>
 					
-        <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
+        <div id = 'helpInfo' class = 'hideme center-text mtm'>
 
         </div>
 					
@@ -168,18 +190,19 @@
                         	$('#soonGroup').css('opacity',code[1]);
                         	$('#plannedGroup').css('opacity',code[2]);
                         	
-                        	sh(code[0],$('#closedGroup'),250*code[0]);
-                        	sh(code[1],$('#soonGroup'),250*code[1]);
-                        	sh(code[2],$('#plannedGroup'),250*code[2]);
+                        	sh(code[0],$('#closedGroup'),code[0]);
+                        	sh(code[1],$('#soonGroup'),code[1]);
+                        	sh(code[2],$('#plannedGroup'),code[2]);
                         	
                             $('.cGroup').css('opacity',code[0]);
                             $('.sGroup').css('opacity',code[1]);
                             $('.pGroup').css('opacity',code[2]);
                             
-                        	sh(code[0],$('.cGroup'),250*code[0]);
-                        	sh(code[1],$('.sGroup'),250*code[1]);
-                        	sh(code[2],$('.pGroup'),250*code[2]);
+                        	sh(code[0],$('.cGroup'),code[0]);
+                        	sh(code[1],$('.sGroup'),code[1]);
+                        	sh(code[2],$('.pGroup'),code[2]);
                         	
+                        	$('#preamble').hide(1);
                         	
                             bgroup(groupcode);
                             
@@ -199,6 +222,7 @@
                         }
                         function sh(code,node,speed){
                         
+                        	speed*=250;
                         	if(code){
                         		node.show(speed);
                         	} else {
@@ -206,28 +230,30 @@
                         	}
                         
                         }
+                        
                         function init() {
                             
-                         	$('#closedGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
-                        	$('#soonGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
-                        	$('#plannedGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
-                            $('.cGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
-                            $('.sGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
-                            $('.pGroup').css('opacity',0).hide(0).addClass(['watchOpacity']);
+                         	$('#closedGroup').css('opacity',0).hide(0);
+                        	$('#soonGroup').css('opacity',0).hide(0);
+                        	$('#plannedGroup').css('opacity',0).hide(0);
+                            $('.cGroup').css('opacity',0).hide(0);
+                            $('.sGroup').css('opacity',0).hide(0);
+                            $('.pGroup').css('opacity',0).hide(0);
                             
                         };
+                        
 					
                         window.onload = function() {
-                        
-                        
+
                             if (window.jQuery) {
                             } else {
                                 alert("There was an issue loading JQuery scripts!");
                             }
                             
-							init();
-                            
                         }
+                        $(document).ready(function() {
+                          init();
+                        });
                                     
                         $(document).on('click', '#cgbutton', function () {
                         	
@@ -243,6 +269,10 @@
                         
 							setGroups([0,0,1]);
                             
+                        });
+                        
+                        $(document).ready(function() {
+                        	document.getElementsByTagName("html")[0].style.visibility = "visible";
                         });
 					
 					</script>

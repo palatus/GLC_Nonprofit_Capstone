@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
+        <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 
 
@@ -114,8 +115,12 @@
             	} else {
             }
             
+            $(document).ready(function() {
+            	document.getElementsByTagName("html")[0].style.visibility = "visible";
+            });            
+            
             $('div a').addClass(['introHover']);
-            $('div a').parent().addClass(['hoverRoots']);
+            $('div a').parent().addClass(['hoverRoots','aline']);
 
     	}
                                     

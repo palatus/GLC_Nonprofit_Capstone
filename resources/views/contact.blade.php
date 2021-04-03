@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
+        <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 		
         <!-- Styles -->
@@ -24,24 +25,77 @@
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
-        <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <script src= "{{ mix('/js/app.js') }}"></script>
  
         @include('nav')		
    
         <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid mtopn">
         	<div class="row">
-        		<div class="col-md-12 text-center innershadow">
-        		
-        			<h3 class="text-center mtoph mbottomh">
-        				How To Contact Us
-        				
-        				
-        			</h3>
-					
-        <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
+        		<div class="col-md-12 text-center innershadow pbottomh">
+            		
+            		<div class = 'shadow hoveringMidsection' style = 'font-size:1.5em; width:50%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
+            		
+                		<div style = 'width:75%; margin: 0 auto;' class="text-center">
+                		
+                			<h1 class="text-center mtoph mbottom">
+                				<div class="text-center ptoph"> How To Contact Us </div>
+                			</h1>
+                			<hr>
+    					
+    					
+    					<div style = 'padding-left:1em;' class = 'text-left' id = 'adressSpace'>
+    					
+    						<div>
+    						
+                                GLC House of Hope for Girls
 
-        </div>
+                                
+    						</div>
+    						<div>
+
+                                P.O.Box 12347
+                           
+    						</div>
+    						<div>
+
+                                Philadelphia Pa, 19119 
+
+    						</div>
+    						<div>
+    						
+                                <i class="fas fa-mobile-alt"></i>   215-259-8714
+                                
+    						</div>
+    					
+    					</div>
+                		<hr>
+                		
+                		<div class = 'pbottomh' id = 'messageSpace'>
+                		
+                			<div>
+                			
+                				<div class = 'pbottom'> OR </div> 
+                				<div id = 'ticketButton' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary'> Create a Ticket for an Administrator to Review </div>
+                				
+                				<div id = 'ticketGroup'>
+                				
+                					<div>Fill Out the Below Information</div>
+                					*Requires DB for log in check*
+                					
+                				
+                				</div>
+                				
+                			</div>
+                		
+                		</div>
+                			
+                		</div>
+  
+					</div>
+        					
+                <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
+        
+                </div>
 					
 					<script>
 					
@@ -51,6 +105,19 @@
                             if (window.jQuery) {
                             } else {
                             }
+                                            
+                            $(document).ready(function() {
+                            
+                            	$('#ticketGroup').hide(1);
+                            	document.getElementsByTagName("html")[0].style.visibility = "visible";
+                            	
+                            });    
+                            $(document).on('click', '#ticketButton', function () {
+                        
+                        		$(this).toggle(100);
+								$('#ticketGroup').toggle(200);
+                            
+                        	});
 
                         }
                                     
@@ -58,7 +125,9 @@
 
         		</div>
         	</div>
+
         </div>
+        
         
 		@include('footer')
 		

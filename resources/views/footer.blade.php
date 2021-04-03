@@ -1,9 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/92b4c082ae.js" crossorigin="anonymous"></script>
+
 <footer id="footer" class="text-center text-white">
 
   <!-- Grid container -->
   <div id = 'fcontainer' class="container">
     <!-- Social media -->
-    <section class="mb-4 row">
+    <section class="mb-4 row ptop">
       <!-- Facebook -->
       <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
           <i class="fab fa-facebook-f"></i>
@@ -22,24 +25,26 @@
 
     <!-- Sponsors -->
     <section id="sponsors" class="row text-center">
-        <div class="col-12 col-md-3">
-            <div class = 'text-center'>
-            	<img class="sponsor img-fluid" src="{{ url('/images/albertsonsCompanies.png') }}">
+    	<div>
+            <div class="col-12 col-md-3">
+                <div class = 'text-center'>
+                	<img class="sponsor img-fluid" src="{{ url('/images/albertsonsCompanies.png') }}">
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-3">
-            <div class = 'text-center'>
-                <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
+            <div class="col-12 col-md-3">
+                <div class = 'text-center'>
+                    <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-3">
-            <div class = 'text-center'>
-                <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
+            <div class="col-12 col-md-3">
+                <div class = 'text-center'>
+                    <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-3">
-            <div class = 'text-center'>
-                <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
+            <div class="col-12 col-md-3">
+                <div class = 'text-center'>
+                    <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
+                </div>
             </div>
         </div>
     </section>

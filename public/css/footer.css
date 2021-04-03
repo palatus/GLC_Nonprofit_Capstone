@@ -5,13 +5,21 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
 }
-#footer img {
-  max-width: 50%;
-  max-height: 50%;
+#sponsors img {
+	
+  width: 100%;
+  height: 50%;
+ object-fit:scale-down;
+
 }
 section div div{
 	
 	margin-top: 1em;
 	margin-bottom: 2.5em;
+	
+}
+section div{
+	
+	height:256px;
 	
 }
