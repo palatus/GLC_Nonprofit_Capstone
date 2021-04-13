@@ -6,7 +6,7 @@
   <!-- Grid container -->
   <div id = 'fcontainer' class="container">
     <!-- Social media -->
-    <section class="mb-4 row ptop">
+    <section class="mb-4 row ptoph">
       <!-- Facebook -->
       <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
           <i class="fab fa-facebook-f"></i>

@@ -31,7 +31,7 @@
    
         <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid">
         	<div class="row">
-        		<div class="col-md-12 text-center innershadow">
+        		<div class="col-md-12 text-center innershadow" style = 'padding-bottom:5em;'>
         		
         			<h3 class="text-center mtm">
         				
@@ -94,7 +94,7 @@
                                                       </div>
                                                           <div class="card-body mtm mbh pbottomh ptoph">
                                                           <h2>EVENT OVER</h2>
-                                                            <p class="card-text mtm">{{$closed['about']}}</p>
+                                                            <p class="card-text mtm">{{$closed['description']}}</p>
                                                           </div>
                                                       </div>
                                     			
@@ -124,7 +124,7 @@
                                                       </div>
                                                       </div>
                                                       <div class="card-body mtm">
-                                                        <p class="card-text mtm pbottomh">{{$soon['about']}}</p>
+                                                        <p class="card-text mtm pbottomh">{{$soon['description']}}</p>
                                                         <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                      </div>
@@ -158,7 +158,7 @@
                                                       </div>
                                                       
                                                       <div class="card-body mtm">
-                                                        <p class="card-text mtm pbottomh">{{$planned['about']}}</p>
+                                                        <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
                                                         <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                       
@@ -276,8 +276,6 @@
                         });
 					
 					</script>
-
-                    {{$keys['log']}}
 
         		</div>
         	</div>

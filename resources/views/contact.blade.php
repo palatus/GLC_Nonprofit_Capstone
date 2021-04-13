@@ -38,7 +38,7 @@
                 		<div style = 'width:75%; margin: 0 auto;' class="text-center">
                 		
                 			<h1 class="text-center mtoph mbottom">
-                				<div class="text-center ptoph"> How To Contact Us </div>
+                				<div class="text-center ptoph"> How To Contact Us</div>
                 			</h1>
                 			<hr>
     					
@@ -74,9 +74,12 @@
                 		
                 			<div>
                 			
-                				<div class = 'pbottom'> OR </div> 
-                				<div id = 'ticketButton' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary'> Create a Ticket for an Administrator to Review </div>
+                				<div class = 'pbottom'>OR</div> 
                 				
+                				
+                				@auth
+                				
+                				<div id = 'ticketButton' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary'> Create a Ticket for an Administrator to Review </div>
                 				<div id = 'ticketGroup'>
                 				
                 					<div>Fill Out the Below Information</div>
@@ -84,6 +87,17 @@
                 					
                 				
                 				</div>
+                				
+                				@else
+                				
+                				<div>
+                    				<div>Create a ticket by logging in</div>
+                    				<div id = 'login' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary mtoph'> Login</div>
+                				</div>
+                				
+                				@endauth
+                				
+
                 				
                 			</div>
                 		
@@ -103,12 +117,13 @@
                         
                         
                             if (window.jQuery) {
+                            	$('#ticketGroup').hide(1);
                             } else {
                             }
                                             
                             $(document).ready(function() {
                             
-                            	$('#ticketGroup').hide(1);
+                            	
                             	document.getElementsByTagName("html")[0].style.visibility = "visible";
                             	
                             });    
@@ -118,7 +133,11 @@
 								$('#ticketGroup').toggle(200);
                             
                         	});
-
+                            $(document).on('click', '#login', function () {
+                        
+                        		window.location = '/login';
+                            
+                        	});
                         }
                                     
 					</script>

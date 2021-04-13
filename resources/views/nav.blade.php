@@ -17,11 +17,22 @@
 	<div class="navbar-collapse collapse w-100" id="navbar">
 		<ul class=" navbar-nav ml-auto w-100 justify-content-end">
 
-			<li class="nav-item msides"><a class="transborder nav-link "
-				href="/login">Login</a></li>
+				@if (Auth::user() != null && Auth::user()->level > 1)
+    			<li class="nav-item msides"><a class="transborder nav-link "
+    				href="/dev">Dev Tools</a></li>
+				@endif
+			
+    			@if (!Auth::check())
+    			<li class="nav-item msides"><a class="transborder nav-link "
+    				href="/login">Login</a></li>
+    			@else
+    			<li class="nav-item msides"><a class="transborder nav-link "
+    				href="/home">Home</a></li>
+    			@endif
+    			
 			<li class="nav-item msides"><a class="nav-link transborder" href="/">What
 					We Do</a></li>
-			<li class="nav-item msides"><a class="nav-link transborder" href="/">Outreach</a>
+			<li class="nav-item msides"><a class="nav-link transborder" href="/Contact">Contact Us</a>
 			</li>
 			<li class="nav-item msides"><a class="nav-link transborder" href="/">Get
 					Involved</a></li>

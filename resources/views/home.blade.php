@@ -1,24 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-@include('nav.blade.php')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Welcome, {{ Auth::user()->name }}</div>
 
                 <div class="panel-body">
+                
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
-                    @endif
+					@endif
 
-                    You are logged in!
-                </div>
+					<div class='text-center'>
+						<div>You are logged in!</div>
+						<div>
+							<button id='continue' type="button" class="mtoph mbottomh btn btn-success">Enter</button>
+						</div>
+					</div>
+
+				</div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+
+            $(document).on('click', '#continue', function () {
+            	
+                window.location = '/events';
+                
+            });
+            
+</script>
+
 @endsection

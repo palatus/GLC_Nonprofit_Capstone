@@ -12,13 +12,22 @@
 */   
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/dev', 'DevController@index')->name('dev');
 
-Route::get('/Home', 'HomeController@index')->name('home');
+Route::get('/Home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
 Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
-Route::get('/Events', 'EventsController@index')->name('events');
+
+Route::get('/Events', 'EventsController@index')->name('events')->middleware('auth');
+
 Route::get('/Contact', 'ContactController@index')->name('contact');
-Route::get('/Contact Us', 'ContactControllerB@index')->name('contactb');
+
 Route::get('/Volunteers', 'VolunteerController@index')->name('volunteers');
+
+
+// Create all the extra routes needed for db integration
+Route::resource('events','EventsController');
 
 Auth::routes();
 

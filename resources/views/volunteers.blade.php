@@ -38,39 +38,44 @@
         				Our Volunteers
         			</h3>
             		
-            		
-                    <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2);' class="text-center row mbottom mtoph ptop innershadow">
-                    
-						@php ($i = 1)
-						@php ($limit = 5)
-                		@foreach($volunteers as $volunteer)
-    						
-    						<div class="col text-center mtoph pbottom mbottomh">
-    							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['img']}}');">
-            						<div class="text-center">
-                  									
+                    	@if(count($volunteers) == 0)
+                    		<div class = 'text-center mtoph mbottomh'>
+                    			<div>There are no active volunteers</div>
+                    		</div>
+                    	@else
+                        <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2);' class="text-center row mbottom mtoph ptop innershadow">
+                        
+    						@php ($i = 1)
+    						@php ($limit = 5)
+                    		@foreach($volunteers as $volunteer)
+        						
+        						<div class="col text-center mtoph pbottom mbottomh">
+        							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['img']}}');">
+                						<div class="text-center">
+                      									
+                						</div>
             						</div>
+            						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
         						</div>
-        						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
-    						</div>
-						
-    						@if($i % $limit == 0)
-    							<div class="w-100"></div>
-    						@endif
-    						@if($loop->remaining == 0)
-        						@for($j = $i; $j<$limit; $j++)
-        							<div class="col"></div>
-        						@endfor
-    						@endif
     						
-    						@php ($i++)
-    						@if($i > $limit)
-    							@php ($i=1)
-    						@endif
-						
-                		@endforeach
-                		
-                	</div>
+        						@if($i % $limit == 0)
+        							<div class="w-100"></div>
+        						@endif
+        						@if($loop->remaining == 0)
+            						@for($j = $i; $j<$limit; $j++)
+            							<div class="col"></div>
+            						@endfor
+        						@endif
+        						
+        						@php ($i++)
+        						@if($i > $limit)
+        							@php ($i=1)
+        						@endif
+    						
+                    		@endforeach
+                    		
+                    	</div>
+                		@endif 
                     
         		</div>
         	</div>

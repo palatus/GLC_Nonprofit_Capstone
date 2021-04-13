@@ -96,9 +96,10 @@
                     <!-- I'm leaving these here as temporary links to key established pages -->
                     <div class = 'links'>
                         <a href="{{ route('aboutus') }}">About Us</a>
-                        <a href="{{ route('events') }}">Events</a>
+                        @auth
+                        	<a href="{{ route('events') }}">Events</a>
+                        @endauth
                         <a href="{{ route('contact') }}">Contact Us</a>
-                        <a href="{{ route('home') }}">Home</a>
                         <a href="{{ route('volunteers') }}">Volunteers</a>
 					</div>
                     

@@ -3,30 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Event;
 
 class EventsController extends Controller
 {
     
+    public function create(){
+        
+    }
+    public function store(Request $request){
+        
+    }
+    public function show($id){
+        
+    }
+    public function edit($id){
+        
+    }
+    public function update(Request $request, $id){
+        
+    }
+    public function destroy($id){
+        
+    }
+    
     public function index(){
 
+        
         // Set page style data
         $style=parent::getStyle();
         
         // We'll switch the id's from 'registered' for their names from the user table when it's finished
-        $events = [
-            
-            ['name' => 'Old 1', 'about' => 'Backend Functionality Testing', 'img' => 'temp.png', 'begins' => '24-03-2021 12:00:00', 'ends' => '24-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Old 2', 'about' => 'Come get some baked march foods, while we talk about...', 'img' => 'temp.png', 'begins' => '29-03-2021 12:00:00', 'ends' => '30-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Old 3', 'about' => 'Functionality Testing', 'img' => 'temp.png', 'begins' => '24-03-2021 12:00:00', 'ends' => '24-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Old 4', 'about' => 'Functionality Testing', 'img' => 'temp.png', 'begins' => '29-03-2021 12:00:00', 'ends' => '30-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Old 5', 'about' => 'Functionality Testing', 'img' => 'temp.png', 'begins' => '24-03-2021 12:00:00', 'ends' => '24-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Old 6', 'about' => 'Functionality Testing', 'img' => 'temp.png', 'begins' => '29-03-2021 12:00:00', 'ends' => '30-03-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            
-            ['name' => 'Website Completion', 'about' => 'Better make this quick', 'img' => 'temp.png', 'begins' => '20-04-2021 12:00:00', 'ends' => '20-04-2021 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Food Drive for Philly', 'about' => 'Help get food to the needy with us this upcoming...', 'img' => 'temp.png', 'begins' => '01-03-2022 12:00:00', 'ends' => '02-01-2022 16:00:00','registered' => '[0,1,2,3,4]'],
-            ['name' => 'Storm Philadelphia', 'about' => 'Let\'s Gather en masse For The 2030 fling!', 'img' => 'temp.png', 'begins' => '05-08-2030 10:00:00', 'ends' => '05-08-2030 14:00:00','registered' => '[0,1,2,3,4]'],
-            
-        ];
+        $events = Event::all();
                
         // Lets split up the events by date
         $closed=[];
@@ -46,18 +54,20 @@ class EventsController extends Controller
         // For each event, evaluate its logical time group
         foreach ($events as $event) {
             
-            $begin = strtotime($event['begins']);
-            $end = strtotime($event['ends']);
-            $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['begins'])[0])[0];
+            $begin = strtotime($event['EventBegin']);
+            $end = strtotime($event['EventEnd']);
+            
+            $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['EventBegin'])[0])[2];
             
             $time = date("h.i A", $begin);
             $time2 = date("h.i A", $end);
             
+            
             $event['time'] = $time;
             $event['time2'] = $time2;
-            $event['year'] = explode("-",explode(" ",$event['begins'])[0])[2];
+            $event['year'] = explode("-",explode(" ",$event['EventBegin'])[0])[0];
             
-            $end = strtotime($event['ends']);
+            $end = strtotime($event['EventEnd']);
             $log = '';
             
             // old event
