@@ -45,7 +45,7 @@ class EventsController extends Controller
         // Fill the events
         
         // Let's use keys to save important small data for ease of access
-        $keys=['now'=>date("d-m-Y H:i:s")];
+        $keys=['now'=>date("Y-m-d H:i:s")];
         $now = strtotime($keys['now']);
         
         // How many days until an event is considered as "planned" instead of "open"
@@ -54,20 +54,20 @@ class EventsController extends Controller
         // For each event, evaluate its logical time group
         foreach ($events as $event) {
             
-            $begin = strtotime($event['EventBegin']);
-            $end = strtotime($event['EventEnd']);
+            $begin = strtotime($event['eventBegin']);
+            $end = strtotime($event['eventEnd']);
             
-            $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['EventBegin'])[0])[2];
+            $event['date'] = date("F", $begin).' '.explode("-",explode(" ",$event['eventBegin'])[0])[2];
             
             $time = date("h.i A", $begin);
             $time2 = date("h.i A", $end);
-            
+            error_log($event['eventBegin'].' '.$event['eventEnd']. ' '.$event['date']);
             
             $event['time'] = $time;
             $event['time2'] = $time2;
-            $event['year'] = explode("-",explode(" ",$event['EventBegin'])[0])[0];
+            $event['year'] = explode("-",explode(" ",$event['eventBegin'])[0])[0];
             
-            $end = strtotime($event['EventEnd']);
+            $end = strtotime($event['eventEnd']);
             $log = '';
             
             // old event

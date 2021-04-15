@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\User;
 
 class CreateUsersTable extends Migration
 {
@@ -19,12 +20,21 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             
-            // 0 - user, 1 - mod, 2 - admin, 3 - super
+            // 0 - user, 1 - volunteer, 2 - admin, 3 - super
             $table->tinyInteger('level')->default(0);
             
             $table->rememberToken();
             $table->timestamps();
         });
+        
+        $User = new User();
+        $User->name = 'Jarred';
+        $User->email = 'test@test.com';
+        $User->password = bcrypt('123456');
+        error_log($User->email.' - '.$User->password);
+        $User->level = 3;
+        $User->save();
+        
     }
 
     /**

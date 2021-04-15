@@ -107,9 +107,32 @@
 							<div id = 'soonGroup' class= ''>
 										@if(count($events['soon']) == 0)
 											<div style = 'font-size:2em;' class = 'sGroup center-text mtm' >
-												No Events Are Currently Open
+												No Events Are Currently Open For Signup
 											</div>
 										@endif
+										
+                                		@foreach($events['now'] as $now)
+                                		
+                                			<div class = 'center-text mbottomh' >
+                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
+                                    			
+                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
+                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                        <div class = 'bigtext'>{{$now['name']}} </div>
+                                                      <div>
+  													  	<span>{{$now['date']}} &emsp; {{$now['time']}} &horbar; {{$now['time2']}}</span>
+                                                      </div>
+                                                      </div>
+                                                      <div class="card-body mtm">
+                                                        <p class="card-text mtm pbottomh">{{$now['description']}}</p>
+                                                        <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
+                                                        <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
+                                                      </div>
+                                                     </div>
+                                    			
+                                    			</div>
+                                    		</div>
+                                		@endforeach
                                 		@foreach($events['soon'] as $soon)
                                 		
                                 			<div class = 'center-text mbottomh' >
@@ -118,7 +141,6 @@
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
                                                       <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
                                                         <div class = 'bigtext'>{{$soon['name']}} </div>
-                                                        
                                                       <div>
   													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
                                                       </div>
@@ -132,6 +154,7 @@
                                     			</div>
                                     		</div>
                                 		@endforeach
+                                		
 							</div>
 							
 							<div id = 'plannedGroup' class= ''>

@@ -23,8 +23,6 @@ class Controller extends BaseController
             '7' => '#584363',           // GLC Tirtiary
         ];
     }
-    
 
-    
 }
 

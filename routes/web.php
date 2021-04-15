@@ -27,10 +27,15 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dev', 'DevController@index')->name('dev');
     Route::get('/Events', 'EventsController@index')->name('events');
     
+    Route::post('/dev','DevController@devAction');
+    
 });
 
 // Create all the extra routes needed for db integration
 Route::resource('events','EventsController');
+
+// POSTS
+
 
 Auth::routes();
 
