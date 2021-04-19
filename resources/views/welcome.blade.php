@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>House of Hope</title>
+        <title>GLC House of H.O.P.E</title>
 
         <!-- Fonts -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,8 +14,6 @@
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
-
-
 
         <!-- Styles -->
         <style>
@@ -88,7 +86,7 @@
 
             <div class="content">
                 <div class="m-b-md maintitle">
-                    GLC House of Hope
+                    GLC House of H.O.P.E
                 </div>
 
                 <div>

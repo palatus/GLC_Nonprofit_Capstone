@@ -29,11 +29,10 @@ class EventsController extends Controller
     
     public function index(){
 
-        
         // Set page style data
         $style=parent::getStyle();
         
-        // We'll switch the id's from 'registered' for their names from the user table when it's finished
+        // Get all events from the database
         $events = Event::all();
                
         // Lets split up the events by date
@@ -41,9 +40,7 @@ class EventsController extends Controller
         $soon=[];
         $happening=[];
         $planned=[];
-        
-        // Fill the events
-        
+
         // Let's use keys to save important small data for ease of access
         $keys=['now'=>date("Y-m-d H:i:s")];
         $now = strtotime($keys['now']);
@@ -51,6 +48,7 @@ class EventsController extends Controller
         // How many days until an event is considered as "planned" instead of "open"
         $relevanceCutoff = 30;
         
+        // Fill the events
         // For each event, evaluate its logical time group
         foreach ($events as $event) {
             
@@ -68,7 +66,6 @@ class EventsController extends Controller
             $event['year'] = explode("-",explode(" ",$event['eventBegin'])[0])[0];
             
             $end = strtotime($event['eventEnd']);
-            $log = '';
             
             // old event
             if($now > $end){
@@ -93,8 +90,6 @@ class EventsController extends Controller
                 }
                 
             }
-            
-            $keys['log'] = $log;
 
         }
         

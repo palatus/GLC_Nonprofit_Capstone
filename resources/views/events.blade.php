@@ -92,9 +92,9 @@
                                                       </div>
                                                       
                                                       </div>
-                                                          <div class="card-body mtm mbh pbottomh ptoph">
-                                                          <h2>EVENT OVER</h2>
-                                                            <p class="card-text mtm">{{$closed['description']}}</p>
+                                                      <h2>EVENT OVER</h2>
+                                                          <div class="card-body mbh">
+                                                            <p class="card-text">{{$closed['description']}}</p>
                                                           </div>
                                                       </div>
                                     			
@@ -124,7 +124,7 @@
                                                       </div>
                                                       </div>
                                                       <div class="card-body mtm">
-                                                        <p class="card-text mtm pbottomh">{{$now['description']}}</p>
+                                                        <p class="card-text mtm pall mall">{{$now['description']}}</p>
                                                         <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
                                                         <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
                                                       </div>

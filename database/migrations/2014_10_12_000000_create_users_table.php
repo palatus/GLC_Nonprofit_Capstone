@@ -27,11 +27,11 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
         
+        // TODO REMOVE ON DEPLOYMENT
+        // Developmental super user (created every migration)
         $User = new User();
-        $User->name = 'Jarred';
         $User->email = 'test@test.com';
         $User->password = bcrypt('123456');
-        error_log($User->email.' - '.$User->password);
         $User->level = 3;
         $User->save();
         

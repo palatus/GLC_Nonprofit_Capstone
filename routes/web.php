@@ -11,6 +11,8 @@
 |
 */   
 
+ini_set('memory_limit', '1024M');
+
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
@@ -26,6 +28,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dev', 'DevController@index')->name('dev');
     Route::get('/Events', 'EventsController@index')->name('events');
+    Route::get('/volunteer', 'VolunteeringFormController@index')->name('volunteer');
     
     Route::post('/dev','DevController@devAction');
     
