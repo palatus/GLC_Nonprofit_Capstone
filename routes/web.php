@@ -11,11 +11,23 @@
 |
 */   
 
+$style = [
+    '1' => '#343a40',           // Primary
+    '2' => '#5d6368',           // Secondary
+    '3' => '#383e42',           // Tirtiary
+    '4' => 'rgba(0,0,0,0.4)',   // Darken
+    '5' => '#555990',           // GLC Primary
+    '6' => '#44465e',           // GLC Secondary
+    '7' => '#584363',           // GLC Tirtiary
+];
+
 ini_set('memory_limit', '1024M');
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
+
+Route::view('/What We Do', 'whatwedo',['styleCode'=>$style])->name('whatwedo');
 
 Route::get('/Contact', 'ContactController@index')->name('contact');
 

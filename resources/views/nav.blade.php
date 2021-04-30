@@ -28,8 +28,7 @@
     			<li class="nav-item msides"><a class="transborder nav-link" href="/home">Home</a></li>
     			@endif
     			
-			<li class="nav-item msides"><a class="nav-link transborder" href="/">What
-					We Do</a></li>
+			<li class="nav-item msides"><a class="nav-link transborder" href="/What We Do">What We Do</a></li>
 			<li class="nav-item msides"><a class="nav-link transborder" href="/Contact">Contact Us</a>
 			</li>
 			
