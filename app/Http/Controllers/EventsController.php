@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Event;
+use App\Volunteer;
 
 class EventsController extends Controller
 {
@@ -24,6 +26,23 @@ class EventsController extends Controller
         
     }
     public function destroy($id){
+        
+    }
+     public function signUpUser($id){
+        
+        $user = Auth::user();
+        if($user->level == 1){
+            
+            $volunteer = new Volunteer();
+            $volunteer->userId = $user->id;
+            $volunteer->eventId = $id;
+            $volunteer->save();
+            
+            return redirect('/home')->with(['styleCode'=>parent::getStyle()]);
+            
+        }
+
+        return redirect('/home')->with(['styleCode'=>parent::getStyle(),'msg'=>'Only volunteer level accounts can sign up for an event!']);
         
     }
     
@@ -59,11 +78,11 @@ class EventsController extends Controller
             
             $time = date("h.i A", $begin);
             $time2 = date("h.i A", $end);
-            error_log($event['eventBegin'].' '.$event['eventEnd']. ' '.$event['date']);
             
             $event['time'] = $time;
             $event['time2'] = $time2;
             $event['year'] = explode("-",explode(" ",$event['eventBegin'])[0])[0];
+            
             
             $end = strtotime($event['eventEnd']);
             

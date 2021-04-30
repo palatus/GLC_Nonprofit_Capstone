@@ -21,7 +21,7 @@
 
         </style>
     </head>
-    <body style = 'background-color:{{$styleCode["5"]}}' class = ''>
+    <body style = 'color:white;background-color:{{$styleCode["5"]}}' class = ''>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
@@ -31,11 +31,10 @@
    
         <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid">
         	<div class="row">
+        	
         		<div class="col-md-12 text-center innershadow" style = 'padding-bottom:5em;'>
         		
         			<h3 class="text-center mtm">
-        				
-        				
         				
         			</h3>
         			
@@ -147,7 +146,9 @@
                                                       </div>
                                                       <div class="card-body mtm">
                                                         <p class="card-text mtm pbottomh">{{$soon['description']}}</p>
-                                                        <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
+                                                        
+                                                        <a href="/Events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
+                                                        
                                                       </div>
                                                      </div>
                                     			

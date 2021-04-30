@@ -36,4 +36,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function showLoginForm()
+    {
+        $style=parent::getStyle();
+        
+        return view('auth.login', ['styleCode'=>$style]);
+    }
+    
 }

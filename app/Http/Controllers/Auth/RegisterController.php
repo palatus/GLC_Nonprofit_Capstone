@@ -39,6 +39,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        $style=parent::getStyle();
+        
+        return view('auth.register', ['styleCode'=>$style]);
+    }
+    
     /**
      * Get a validator for an incoming registration request.
      *
@@ -68,4 +75,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+  
+    
 }

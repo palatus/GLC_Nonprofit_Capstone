@@ -26,9 +26,10 @@ class HomeController extends Controller
     {
         
         if(Auth::check()){
-            return view('home');
+            $style=parent::getStyle();
+            return view('home',['styleCode'=>$style]);
         }
         
-        return view('login');
+        return view('login',['styleCode'=>$style]);
     }
 }

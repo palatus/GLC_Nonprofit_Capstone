@@ -14,14 +14,84 @@
     
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style = 'background-color:#555990;'>
+<style>
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid grey;
+    margin: 1em 0;
+    padding: 0;
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.messageSection{
+
+    margin-top:2em;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:{{$styleCode["6"]}};
+
+}
+.mall{
+    margin-top:2em;
+    margin-bottom:2em;
+}
+.pall{
+    padding-top:2em;
+    padding-bottom:2em;
+}
+.bordered{
+
+    border-style: solid;
+    border-color:grey;
+
+}
+.innershadow {
+	-moz-box-shadow: inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow: inset 0 0 10px #000000;
+}
+.big{
+
+    font-size:2em;
+    border-radius:1px;
+   	-webkit-transition: border-radius 0.1s 0s ease-in;
+	-moz-transition: border-radius 0.1s 0s ease-in;
+	-o-transition: border-radius 0.1s 0s ease-in;
+	transition: border-radius 0.1s 0s ease-in;
+    
+}
+.big:hover{
+
+    border-radius:8px;
+    
+}
+#additions{
+    background-color:{{$styleCode["6"]}};
+}
+.3q{
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+}
+a{
+    color:white;
+}
+.shadow{
+ 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+</style>
+<body style = 'background-color:{{$styleCode["1"]}};'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+        <nav style = 'border-color:black;background-color:{{$styleCode["3"]}};'class="shadow navbar navbar-default navbar-static-top ">
+            <div class="container ">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -33,7 +103,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a style = 'color:white;' class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -51,14 +121,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
+                        
+                        <div style = 'padding-top:1em;'>
+								<a style = 'color:white;' href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
@@ -67,9 +132,8 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
-                                </ul>
-                            </li>
+                        </div>
+                                        
                         @endguest
                     </ul>
                 </div>

@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\User;
 
+
 class CreateUsersTable extends Migration
 {
     /**
@@ -15,6 +16,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -25,11 +27,15 @@ class CreateUsersTable extends Migration
             
             $table->rememberToken();
             $table->timestamps();
+            
+            $table->string('formId')->default("");
+            
         });
         
         // TODO REMOVE ON DEPLOYMENT
         // Developmental super user (created every migration)
         $User = new User();
+        $User->name='Root';
         $User->email = 'test@test.com';
         $User->password = bcrypt('123456');
         $User->level = 3;

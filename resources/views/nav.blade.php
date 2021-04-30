@@ -8,7 +8,7 @@
 	<a href="/" class="navbar-brand  mr-auto"> <img
 		class="float-left mbottom mtopn" id="logo"
 		src="{{ url('/images/glcLogo.webp') }}" alt="Logo" /> <span
-		class="mbottom">GLC|House of H.O.P.E</span>
+		class="mbottom">GLC House of H.O.P.E</span>
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#collapsingNavbar3">
@@ -33,7 +33,7 @@
 			<li class="nav-item msides"><a class="nav-link transborder" href="/Contact">Contact Us</a>
 			</li>
 			
-			@if (Auth::user() != null && Auth::user()->level == 0)
+			@if (Auth::user() != null && (Auth::user()->level == 0 || Auth::user()->level == 3))
 			<li class="nav-item msides"><a class="nav-link transborder" href="/volunteer">Get Involved</a></li>
 			@endif
 				
