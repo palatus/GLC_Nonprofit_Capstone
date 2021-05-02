@@ -29,11 +29,15 @@ class TicketController extends Controller{
         
     }
     
+    public function index(){
+        return redirect('/contact');
+    }
+    
     public function createTicket(){
    
         $user = Auth::user();
         if($user == null){
-            return redirect('/');
+            return redirect('/login');
         }
         $msg = request('desc');
         if(strlen($msg) > 1024){

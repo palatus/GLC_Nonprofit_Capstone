@@ -35,8 +35,6 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::get('/Volunteers', 'VolunteerController@index')->name('volunteers');
 
 Route::get('/download/form','DownloadController@form');
-Route::get('/download/{file}','DownloadController@grab');
-
 
 // Routes that require a general log in
 Route::group(['middleware' => ['auth']], function() {
@@ -50,6 +48,8 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::get('/events/{id}', 'EventsController@signUpUser');
     Route::get('/ticket/{id}','TicketController@close');
+    Route::get('/ticket','TicketController@index');
+    Route::get('/download/{file}','DownloadController@grab');
     
     Route::post('/dev','DevController@devAction');
     Route::post('/volunteer','VolunteeringFormController@processRequest');

@@ -125,7 +125,7 @@
                 				
                 				@else
                 				
-                				@if(Auth::user()->level==1)
+                				@if(Auth::user() != null && Auth::user()->level==1)
                     				<div>
                         				<div>Create a ticket by logging in</div>
                         				<div id = 'login' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary mtoph'> Login</div>
