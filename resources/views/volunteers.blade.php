@@ -30,7 +30,7 @@
         
         <div style = 'width:90%;' class="mbottom container-fluid">
         
-        	<button id = 'svbutton' type="button" class="btn btn-outline-primary">Show Volunteers</button>
+        	
         	<div class="row">
         		<div class="col-md-12">
         		

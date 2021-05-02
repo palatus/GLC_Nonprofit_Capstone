@@ -139,15 +139,20 @@
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
                                                       <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
-                                                        <div class = 'bigtext'>{{$soon['name']}} </div>
-                                                      <div>
-  													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
-                                                      </div>
+                                                          <div class = 'bigtext'>{{$soon['name']}} </div>
+                                                          <div>
+      													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
+                                                          </div>
                                                       </div>
                                                       <div class="card-body mtm">
+                                                      	<div class =  'text-left' style = 'padding-left:3em;font-size:1.25em;'>
+                                                      	
+                                                      		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
+                                                      	
+                                                      	</div>
                                                         <p class="card-text mtm pbottomh">{{$soon['description']}}</p>
                                                         
-                                                        <a href="/Events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
+                                                        <a href="/events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                         
                                                       </div>
                                                      </div>
@@ -182,8 +187,9 @@
                                                       </div>
                                                       
                                                       <div class="card-body mtm">
+                                                      
                                                         <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
-                                                        <a href="#" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
+                                                        <a href="/events/{{$planned['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>
                                                       
                                                     </div>
@@ -196,7 +202,7 @@
 							
 						</div>
 					
-						<div class='vmargin'> </div>
+						<div style = 'color:orange;'class = 'mall' id = 'msg'>{{ session('msg') }}</div>
 					
 					</div>
 					

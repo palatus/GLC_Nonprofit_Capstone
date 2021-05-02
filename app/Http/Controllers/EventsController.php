@@ -30,19 +30,38 @@ class EventsController extends Controller
     }
      public function signUpUser($id){
         
+        $event = Event::find($id);
+        if($event == null){
+            return back()->with(['styleCode'=>parent::getStyle(),'msg'=>'There was an issue registering for this event!']);
+        }
+        
         $user = Auth::user();
-        if($user->level == 1){
-            
+        $eventLimit = $event->maxVolunteers;
+        $eventVolunteers = Volunteer::where('eventId',$id)->get();
+        
+        $userCheck = Volunteer::where('eventId',$id)->where('userId',$user->id)->get();
+        if($userCheck != null || count($userCheck) > 0){
+            return back()->with(['styleCode'=>parent::getStyle(),'msg'=>'You have already signed up for this event!']);
+        }
+        
+        if($eventLimit <= count($eventVolunteers)){
+            return back()->with(['styleCode'=>parent::getStyle(),'msg'=>'This event is full!']);
+        }
+        
+        if($user->level >= 1){
+
             $volunteer = new Volunteer();
             $volunteer->userId = $user->id;
             $volunteer->eventId = $id;
             $volunteer->save();
             
-            return redirect('/home')->with(['styleCode'=>parent::getStyle()]);
+            return back()->with(['styleCode'=>parent::getStyle(),'msg'=>'You\'ve been registered for the event!']);
+            
+        } else {
+
+            return redirect('/home')->with(['styleCode'=>parent::getStyle(),'msg'=>'Only volunteer level accounts can sign up for an event!']);
             
         }
-
-        return redirect('/home')->with(['styleCode'=>parent::getStyle(),'msg'=>'Only volunteer level accounts can sign up for an event!']);
         
     }
     
@@ -82,6 +101,9 @@ class EventsController extends Controller
             $event['time'] = $time;
             $event['time2'] = $time2;
             $event['year'] = explode("-",explode(" ",$event['eventBegin'])[0])[0];
+            
+            $volunteers = Volunteer::where('eventId',$event->id)->get();
+            $event['regstered'] = count($volunteers);
             
             
             $end = strtotime($event['eventEnd']);

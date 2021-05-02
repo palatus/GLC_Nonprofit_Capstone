@@ -29,13 +29,12 @@ Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
 
 Route::view('/What We Do', 'whatwedo',['styleCode'=>$style])->name('whatwedo');
 
-Route::get('/Contact', 'ContactController@index')->name('contact');
+Route::get('/contact', 'ContactController@index')->name('contact');
 
 Route::get('/Volunteers', 'VolunteerController@index')->name('volunteers');
 
 Route::get('/download/form','DownloadController@form');
 Route::get('/download/{file}','DownloadController@grab');
-
 
 
 // Routes that require a general log in
@@ -45,14 +44,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dev', 'DevController@index')->name('dev');
     Route::get('/dev/volunteer/deny/{id}','DevController@denyUserForm')->name('denyUserForm');
     Route::get('/dev/volunteer/permit/{id}','DevController@acceptUserForm')->name('acceptUserForm');
-    Route::get('/Events', 'EventsController@index')->name('events');
+    Route::get('/events', 'EventsController@index')->name('events');
     Route::get('/volunteer', 'VolunteeringFormController@index')->name('volunteer');
     
-    Route::get('/Events/{id}', 'EventsController@signUpUser');
+    Route::get('/events/{id}', 'EventsController@signUpUser');
+    Route::get('/ticket/{id}','TicketController@close');
     
     Route::post('/dev','DevController@devAction');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
-
+    Route::post('/ticket','TicketController@createTicket');
+    
     
 });
 

@@ -31,13 +31,19 @@
    
         <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid mtopn">
         	<div class="row">
-        		<div class="col-md-12 text-center innershadow pbottomh">
+        		<div class="col-md-12 text-center innershadow ptoph">
             		
-            		<div class = 'shadow hoveringMidsection' style = 'font-size:1.5em; width:50%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
+            		<div class = 'shadow hoveringMidsection' style = 'font-size:1.5em; width:70%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
+            			<div id = 'mssg' style = 'color:#fc4e03'>
+                    				{{ session('msg') }}
+                    	</div>
+            		</div>
+            		
+            		<div class = 'shadow hoveringMidsection bordered' style = 'font-size:1.5em; width:70%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
             		
                 		<div style = 'width:75%; margin: 0 auto;' class="text-center">
                 		
-                			<h1 class="text-center mtoph mbottom">
+                			<h1 class="text-center @if(isset($msg))mtoph @endif mbottom">
                 				<div class="text-center ptoph"> How To Contact Us</div>
                 			</h1>
                 			<hr>
@@ -83,17 +89,53 @@
                 				<div id = 'ticketGroup'>
                 				
                 					<div>Fill Out the Below Information</div>
-                					*Requires DB for log in check*
+                					<div>An Admin Will Email You</div>
+                					<form id = 'issues' action="/ticket" method='POST'>
+                                    	{{ csrf_field() }}
+                                    	<div style = 'border: 3px solid #222232; border-radius:2px; background-color:{{$styleCode["1"]}}' class = 'text-center quarterwidth mtoph innershadow'>
+                                          <label class = 'mtoph' for="desc">Describe Issue:</label>
+                                          <br>
+                                          <textarea style = 'color:black;padding-left:1em;padding-top:0.75em;margin-left:-1em;' class = 'shadow mtop' rows="6" cols="50%" name="desc" id = 'desc' form="issues" placeholder = 'Describe problem here...' required></textarea>
+                                          
+                                            <div class = 'mtop'>
+                                                <label for="itype">Type of Issue</label>
+												<br>
+                                                    <select style = 'color:black;' id = itype name="itype" form="issues">
+                                                    
+                                                        <option value=0>Account Issue</option>
+                                                        <option value=1>Event Signup Issue</option>
+                                                        <option value=2>Log In Issue</option>
+                                                        <option value=3>Graphical Problems</option>
+                                                        <option value=4>Other</option>
+                                                        
+                                                    </select>
+                                            </div>
+                                         
+                                          <input type="hidden" name="type" value="1">
+                                            
+										  <br>
+										  
+										  <div style=  'margin-right:1em;' class = 'text-right mbottom'><input type="submit" class="btn btn-primary" value="Submit"></div>
+                                          
+                                      	</div>
+                                    </form>
                 					
                 				
                 				</div>
                 				
                 				@else
                 				
-                				<div>
-                    				<div>Create a ticket by logging in</div>
-                    				<div id = 'login' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary mtoph'> Login</div>
-                				</div>
+                				@if(Auth::user()->level==1)
+                    				<div>
+                        				<div>Create a ticket by logging in</div>
+                        				<div id = 'login' style = 'color:#c7e6eb;' class = 'btn btn-outline-primary mtoph'> Login</div>
+                        				
+                    				</div>
+                				@else
+                					<div>Verifying your account with us will give you access to administrator aid via our ticket system!</div>
+                					<div>You'll also be able to volunteer for events, and help give back to the community.</div>
+                					<div>You can verify your account and elevate to volunteer level here: <a href='/volunteer'>Volunteer Page</a></div>
+                				@endif
                 				
                 				@endauth
                 				
