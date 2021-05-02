@@ -95,7 +95,7 @@
                     <div class = 'links'>
                         <a href="{{ route('aboutus') }}">About Us</a>
                         @auth
-                        	<a href="{{ route('events') }}">Events</a>
+                        	<a href="/events">Events</a>
                         @endauth
                         <a href="{{ route('contact') }}">Contact Us</a>
                         <a href="{{ route('volunteers') }}">Volunteers</a>
