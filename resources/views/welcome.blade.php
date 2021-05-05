@@ -13,6 +13,7 @@
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
+        <link href = "{{ asset('/css/welcome.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 
         <!-- Styles -->
@@ -66,44 +67,102 @@
             }
         </style>
     </head>
-    <body class = 'mainbg'>
+    <body>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
         <script src= "{{ mix('/js/app.js') }}"></script>
     
-        <div  class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a class = 'dd' href="{{ route('login') }}">Login</a>
-                        <a class = 'dd' href="{{ route('register') }}">Register</a>
-                    @endauth
+        
+
+        <!-- Carousel Start -->
+        <div id="topCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel1.jpg')}}" alt="First slide">
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="m-b-md maintitle">
-                    GLC House of H.O.P.E
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel2.jpg')}}" alt="Second slide">
                 </div>
-
-                <div>
-
-                    <!-- I'm leaving these here as temporary links to key established pages -->
-                    <div class = 'links'>
-                        <a href="{{ route('aboutus') }}">About Us</a>
-                        @auth
-                        	<a href="/events">Events</a>
-                        @endauth
-                        <a href="{{ route('contact') }}">Contact Us</a>
-                        <a href="{{ route('volunteers') }}">Volunteers</a>
-					</div>
-                    
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Third slide">
                 </div>
             </div>
         </div>
+        <!-- Carousel End -->
+
+        <!--Card Start -->
+        <div class="container top-buffer">
+            
+            <!-- Events -->
+            <h2 class="text-center">Events</h2>
+                <!-- Row Start -->
+                <div class="card-deck row">
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Row End -->
+            
+            <!-- Newsletters -->
+            <h2 class="text-center top-buffer">Newsletters</h2>
+                <!-- Row Start -->
+                <div class="card-deck row">
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                    <div class="card col-12 col-md-4">
+                        <img class="card-img-top" src="" alt="">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">No image here. Details?</p>            
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Row End -->
+        </div>
+
 
 	<script>
 					
