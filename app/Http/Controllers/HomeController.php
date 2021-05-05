@@ -34,7 +34,7 @@ class HomeController extends Controller
         foreach($ticketData as $ticket) {
             
 
-            $splitData[$group][$count] = ['email'=>User::find($ticket->userId)->email,'group'=>$group,'ticket' => $ticket];
+            $splitData[$group][$count] = ['name'=>User::find($ticket->userId)->name,'email'=>User::find($ticket->userId)->email,'group'=>$group,'ticket' => $ticket];
             
             if(($count!= 0 || $ticketsPerPage == 1) && ($count+1) % $ticketsPerPage == 0){
                 

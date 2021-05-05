@@ -40,7 +40,7 @@ class EventsController extends Controller
         $eventVolunteers = Volunteer::where('eventId',$id)->get();
         
         $userCheck = Volunteer::where('eventId',$id)->where('userId',$user->id)->get();
-        if($userCheck != null || count($userCheck) > 0){
+        if(count($userCheck) > 0){
             return back()->with(['styleCode'=>parent::getStyle(),'msg'=>'You have already signed up for this event!']);
         }
         

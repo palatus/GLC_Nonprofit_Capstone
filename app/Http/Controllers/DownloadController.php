@@ -27,6 +27,7 @@ class DownloadController extends Controller
             return response()->download($file_path);
             
         }
+        return back();
             
     }
     

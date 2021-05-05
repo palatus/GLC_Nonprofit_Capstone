@@ -9,21 +9,24 @@ use App\User;
 class TicketController extends Controller{
     
     public function close($id){
-        
+
         $ticket = Ticket::find($id);
+        $user = User::find($ticket->userId);
         
+        if($user == null || Auth::user() == null || Auth::user()->level < 2){
+            return back();
+        }
         if($ticket == null){
             return back();
+        }
+        if($ticket->closed){
+            return back()->with('msg','That ticket is already closed');
         }
         
         // Close the ticket
         $ticket->closed = 1;
         $ticket->save();
-        $user = User::find($ticket->userId);
         
-        if($user == null){
-            return back();
-        }
         
         return back()->with('msg','Ticket '.$ticket->id.' closed. Don\'t forget to email the user about their issue! ('.$user->email.')');
         
@@ -67,7 +70,7 @@ class TicketController extends Controller{
         $ticket->type = $type;
         $ticket->save();
         
-        return redirect('/home')->with('msg','Your ticket was submitted! A administrator will review and email you about the given information');
+        return redirect('/home')->with('msg','Your ticket was submitted! An administrator will review and email you about the given information');
         
     }
     

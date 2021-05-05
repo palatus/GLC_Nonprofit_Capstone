@@ -5,11 +5,11 @@
 
 <div style= 'font-size:1.25em; color:white; padding-top:2em;' class="container ">
 
-    <div class="row shadow" style = 'background-color:{{$styleCode["6"]}};'>
+    <div class="row shadow grad10">
       
-        <div class="col-md-12 ">
+        <div class="col-md-12 r">
         
-			<div style = 'margin-left:1.25em; color:orange;'class = 'mall' id = 'msg'>{{ session('msg') }}</div><hr>
+			<div style = 'margin-left:auto;margin-right:auto; color:orange; 'class = 'mall text-center' id = 'msg'>{{ session('msg') }}</div><hr>
 			
             <div style = 'margin-left:1em;'class="panel-heading">Welcome, @if(Auth::user() != null) {{Auth::user()->name}} @endif</div>
 
@@ -25,7 +25,7 @@
     			<div class='text-center pall'>
     						
                 	<div>
-                		<button id='continue' class="btn-primary big" style = 'padding-left:1em;padding-right:1em;'>Continue to Events</button>
+                		<button id='continue' class="btn-primary big " style = 'padding-left:1em;padding-right:1em;'>Continue to Events</button>
                 	</div>
                 						
                 </div>
@@ -36,7 +36,7 @@
         
     </div>
 
-    <div class='text-center messageSection shadow animateHeight'>
+    <div class='text-center messageSection shadow animateHeight grad10'>
             
         <div style = 'color:white;'>
         
@@ -58,7 +58,7 @@
         				
         				@foreach($tickets['data'] as $ticketGroup)
         				
-        					<div id = 'ticketPage{{$loop->iteration}}' style = 'width:75%;margin:auto;border: 3px solid #222232; border-radius:2px;background-color:{{$styleCode["1"]}}' class =  '@if($loop->iteration != 1) hidden @endif innershadow pall'>
+        					<div id = 'ticketPage{{$loop->iteration}}' style = 'width:66%;margin:auto;border: 3px solid #222232; border-radius:2px;background-color:{{$styleCode["1"]}}' class =  '@if($loop->iteration != 1) hidden @endif innershadow pall'>
         					
         						<div style = 'font-weight:bold;'class = 'text-left lm'> Ticket {{$loop->iteration}}/{{$tickets['groupSize']}} </div><hr style = 'padding-bottom:2em;'>
             					@foreach($ticketGroup as $ticket)
@@ -74,7 +74,7 @@
                                               
                                             </div>
                                             <div class="col-sm">
-                                              User Name: {{Auth::user()->name}}
+                                              User Name: {{$ticket['name']}}
                                             </div>
                                           </div>
                                         </div>
@@ -99,10 +99,6 @@
                                                         	@break
                                                                             
                                             			@case(2)
-                                                        	<span style = 'color:red'>Log In Issue</span>
-                                                            @break
-                                                                            
-                                            			@case(3)
                                                         	<span style = 'color:red'>Graphical Problems</span>
                                                          	@break
                                                                     
@@ -168,7 +164,7 @@
             
     </div>
     
-    <div id = 'additions' class='text-left mall shadow'>
+    <div id = 'additions' class='text-left mall shadow grad10 r'>
             
         <div style = 'color:white;'>
         

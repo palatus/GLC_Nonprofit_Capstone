@@ -29,7 +29,7 @@
  
         @include('nav')		
    
-        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid">
+        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;' class="container-fluid">
         	<div class="row">
         	
         		<div class="col-md-12 text-center innershadow" style = 'padding-bottom:5em;'>
@@ -78,11 +78,11 @@
 										
                                 		@foreach($events['closed'] as $closed)
                                 		
-                                			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow'>
+                                			<div class = 'center-text mbottomh ' >
+                                    			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow '>
                                     			
-                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center ">
+                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
                                                       
 													  <div class = 'bigtext'>{{$closed['name']}}</div>
                                                         
@@ -112,11 +112,11 @@
 										
                                 		@foreach($events['now'] as $now)
                                 		
-                                			<div class = 'center-text mbottomh' >
+                                			<div class = 'center-text mbottomh ' >
                                     			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
                                                         <div class = 'bigtext'>{{$now['name']}} </div>
                                                       <div>
   													  	<span>{{$now['date']}} &emsp; {{$now['time']}} &horbar; {{$now['time2']}}</span>
@@ -135,24 +135,24 @@
                                 		@foreach($events['soon'] as $soon)
                                 		
                                 			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
+                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow '>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
-                                                          <div class = 'bigtext'>{{$soon['name']}} </div>
+                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10 " role="alert">
+                                                          <div class = 'bigtext '>{{$soon['name']}} </div>
                                                           <div>
       													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
                                                           </div>
                                                       </div>
-                                                      <div class="card-body mtm">
-                                                      	<div class =  'text-left' style = 'padding-left:3em;font-size:1.25em;'>
+                                                      <div class="card-body mtm ">
+                                                      	<div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
                                                       	
                                                       		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
                                                       	
                                                       	</div>
-                                                        <p class="card-text mtm pbottomh">{{$soon['description']}}</p>
+                                                        <p class="card-text mtm pbottomh ">{{$soon['description']}}</p>
                                                         
-                                                        <a href="/events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
+                                                        <a href="/events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter ">Sign Up</a>
                                                         
                                                       </div>
                                                      </div>
@@ -176,7 +176,7 @@
                                     			<div style = 'color:white;' class = 'pGroup mtm width75 innershadow'>
                                     			
                                                     <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'background:#2f3852; color:white;' class="alert alert-dark card-header" role="alert">
+                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
                                                         
                                                         <div class = 'bigtext'>{{$planned['name']}} </div>
                                                         
@@ -187,7 +187,11 @@
                                                       </div>
                                                       
                                                       <div class="card-body mtm">
-                                                      
+                                                          <div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
+                                                          	
+                                                          		<div>{{$planned['regstered']}} of {{$planned->maxVolunteers}} volunteers</div>
+                                                          	
+                                                          </div>
                                                         <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
                                                         <a href="/events/{{$planned['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
                                                       </div>

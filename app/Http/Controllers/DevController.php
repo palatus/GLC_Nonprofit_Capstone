@@ -28,6 +28,11 @@ class DevController extends Controller
     public function denyUserForm($id){
         
         $user = User::find($id);
+        $thisUser = Auth::user();
+        if($thisUser == null || $thisUser->level < 2){
+            return back();
+        }
+        
         $style = parent::getStyle();
         
         if($user != null){
@@ -69,6 +74,11 @@ class DevController extends Controller
         $user = User::find($id);
         $style = parent::getStyle();
         
+        $thisUser = Auth::user();
+        if($thisUser == null || $thisUser->level < 2){
+            return back();
+        }
+        
         if($user->level >= 1){
             if($user->level > 1){
                 return redirect('/dev')->with('error', 'This user is not allowed to become a volunteer!')->with('styleCode', $style);
@@ -103,6 +113,11 @@ class DevController extends Controller
      */
     public function createAccount($accountData){
      
+        $thisUser = Auth::user();
+        if($thisUser == null || $thisUser->level < 2){
+            return back();
+        }
+        
         $style=parent::getStyle();
         if($accountData[3] >= Auth::user()->level){
             return redirect('/dev')->with('error','You may only create an account with a lower permissions level than your own')->with('styleCode' ,$style);
@@ -128,7 +143,11 @@ class DevController extends Controller
      */
     public function createEvent($eventData){
         
-        error_log(implode($eventData));
+        $thisUser = Auth::user();
+        if($thisUser == null || $thisUser->level < 2){
+            return back();
+        }
+
         if($eventData[2] == null || $eventData[3] == null){
             return -1;
         }

@@ -29,12 +29,12 @@
  
         @include('nav')		
    
-        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid mtopn">
+        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;' class="container-fluid mtopn">
         	<div class="row">
         	
         		<div class="col-md-12 text-center innershadow">
         		
-        		<div style = 'margin-left:1em; margin-right:1em;' id = 'groups' class = 'shadow mtoph ptop'>
+        		<div style = 'margin:4em; width:66%; margin-left:auto;margin-right:auto;' id = 'groups' class = 'shadow mtoph ptop grad10'>
             		<div style = 'padding-left:1em;padding-right:1em;' id = 'Explain'>
             			<div class="text-center mtoph mbottomh titleFont caps underline">
             				Becoming a volunteer is easy

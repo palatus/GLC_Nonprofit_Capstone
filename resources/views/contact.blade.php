@@ -29,17 +29,17 @@
  
         @include('nav')		
    
-        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.55em;' class="container-fluid mtopn">
+        <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;' class="container-fluid mtopn">
         	<div class="row">
         		<div class="col-md-12 text-center innershadow ptoph">
             		
-            		<div class = 'shadow hoveringMidsection' style = 'font-size:1.5em; width:70%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
+            		<div class = 'shadow hoveringMidsection grad10' style = 'font-size:1.5em; width:70%; margin: 0 auto;'>
             			<div id = 'mssg' style = 'color:#fc4e03'>
                     				{{ session('msg') }}
                     	</div>
             		</div>
             		
-            		<div class = 'shadow hoveringMidsection bordered' style = 'font-size:1.5em; width:70%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
+            		<div class = 'shadow hoveringMidsection grad10' style = 'font-size:1.5em; width:70%; margin: 0 auto; background-color:{{$styleCode["6"]}};'>
             		
                 		<div style = 'width:75%; margin: 0 auto;' class="text-center">
                 		
@@ -104,9 +104,8 @@
                                                     
                                                         <option value=0>Account Issue</option>
                                                         <option value=1>Event Signup Issue</option>
-                                                        <option value=2>Log In Issue</option>
-                                                        <option value=3>Graphical Problems</option>
-                                                        <option value=4>Other</option>
+                                                        <option value=2>Graphical Problems</option>
+                                                        <option value=3>Other</option>
                                                         
                                                     </select>
                                             </div>
@@ -189,10 +188,7 @@
 
         </div>
         
-        
 		@include('footer')
-		
-		<div id = 'endSpace'></div>
 		
     </body>
 </html>

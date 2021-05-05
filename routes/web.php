@@ -45,10 +45,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dev/volunteer/permit/{id}','DevController@acceptUserForm')->name('acceptUserForm');
     Route::get('/events', 'EventsController@index')->name('events');
     Route::get('/volunteer', 'VolunteeringFormController@index')->name('volunteer');
+    Route::get('/ticket','TicketController@index');
     
     Route::get('/events/{id}', 'EventsController@signUpUser');
     Route::get('/ticket/{id}','TicketController@close');
-    Route::get('/ticket','TicketController@index');
     Route::get('/download/{file}','DownloadController@grab');
     
     Route::post('/dev','DevController@devAction');

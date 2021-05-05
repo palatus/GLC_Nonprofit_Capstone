@@ -8,46 +8,48 @@
     <!-- Social media -->
     <section class="mb-4 row ptoph">
       <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://www.facebook.com/george.cannon.98499" role="button">
           <i class="fab fa-facebook-f"></i>
       </a>
 
       <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="#!" role="button">
           <i class="fab fa-twitter"></i>
       </a>
 
       <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="#!" role="button">
           <i class="fab fa-instagram"></i>
       </a>      
     </section>
 
     <!-- Sponsors -->
-    <section id="sponsors" class="row text-center">
-    	<div>
-            <div class="col-12 col-md-3">
-                <div class = 'text-center'>
-                	<img class="sponsor img-fluid" src="{{ url('/images/albertsonsCompanies.png') }}">
+
+        <section id="sponsors" class="row text-center">
+        	<div>
+                <div class="col-12 col-md-3">
+                    <div class = 'text-center'>
+                    	<img class="sponsor img-fluid"  src="{{ url('/images/albertsonsCompanies.png') }}">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class = 'text-center'>
+                        <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class = 'text-center'>
+                        <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class = 'text-center'>
+                        <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
-                <div class = 'text-center'>
-                    <img class="sponsor img-fluid" src="{{ url('/images/carsonValley.webp') }}">
-                </div>
-            </div>
-            <div class="col-12 col-md-3">
-                <div class = 'text-center'>
-                    <img class="sponsor img-fluid" src="{{ url('/images/nicetownCDC.jpeg') }}">
-                </div>
-            </div>
-            <div class="col-12 col-md-3">
-                <div class = 'text-center'>
-                    <img class="sponsor img-fluid" src="{{ url('/images/wawa.svg') }}">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+   
     <!-- Section: Text -->
     
   </div>

@@ -86,7 +86,7 @@ a{
  	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 </style>
-<body style = 'background-color:{{$styleCode["1"]}};'>
+<body class = '' style = 'background-color:{{$styleCode["1"]}};'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
