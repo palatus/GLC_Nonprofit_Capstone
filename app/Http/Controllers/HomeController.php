@@ -70,7 +70,13 @@ class HomeController extends Controller
         return ['data'=>$splitData,'length'=>count($ticketData),'groupSize'=>($group+1)];
         
     }
-    
+    public function logout(){
+        
+        Auth::logout();
+        
+        return redirect('/');
+        
+    }
     public function index()
     {
         
@@ -90,7 +96,7 @@ class HomeController extends Controller
             $tickets = Ticket::where('closed', 0)->get();
             $tickets = $this->paginate($ticketsPerPage,$tickets);
             
-            return view('homeb',['tickets'=>$tickets,'styleCode'=>$style]);
+            return view('home',['tickets'=>$tickets,'styleCode'=>$style]);
             
         }
         

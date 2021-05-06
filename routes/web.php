@@ -39,6 +39,7 @@ Route::get('/download/form','DownloadController@form');
 // Routes that require a general log in
 Route::group(['middleware' => ['auth']], function() {
     
+    
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/dev', 'DevController@index')->name('dev');
     Route::get('/dev/volunteer/deny/{id}','DevController@denyUserForm')->name('denyUserForm');
@@ -51,6 +52,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/ticket/{id}','TicketController@close');
     Route::get('/download/{file}','DownloadController@grab');
     
+    Route::post('/home/logout', 'HomeController@logout');
     Route::post('/home/icon','UploadController@uploadIcon');
     Route::post('/dev','DevController@devAction');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
