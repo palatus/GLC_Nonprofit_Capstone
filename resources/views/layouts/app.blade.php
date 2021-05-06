@@ -111,13 +111,7 @@ a{
                     </button>
 
                     <!-- Branding Image -->
-                    <div style = 'padding-left:1em;padding-right:2em;' style = ''>
-                    	<a href="/" class="navbar-brand  mr-auto"> <img
-                    		class="mbottom mtopn" id="logo" style ='color:white;display:inline-block;'
-                    		src="{{ url('/images/glcLogo.webp') }}" alt="Logo" /> <span
-                    		class="mbottom">GLC House of H.O.P.E</span>
-                    	</a>
-                	</div>
+                    
                 	
                 </div>
 

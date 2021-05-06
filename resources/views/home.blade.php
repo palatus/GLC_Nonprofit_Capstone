@@ -45,7 +45,7 @@
              		<div>
              		
                 		<div style = 'padding-top:4em;' class="col text-center mtoph pbottom mbottomh innershadow">
-                			<div class = "box imgBg innershadow" id = 'userIcon' style = "padding-top:1em;margin-bottom:0.66em;background-image: url('/images/user/{{Auth::user()->iconId}}');">
+                			<div class = "boxB imgBg innershadow" id = 'userIcon' style = "padding-top:1em;margin-bottom:0.66em;background-image: url('/images/user/{{Auth::user()->iconId}}');">
                         		<div  class="text-center">
                               					
     									
