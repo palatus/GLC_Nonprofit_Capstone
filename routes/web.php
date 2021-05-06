@@ -34,6 +34,8 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 
 Route::get('/volunteers', 'VolunteerController@index')->name('volunteers');
 
+Route::get('/our story', 'OurStoryController@index')->name('ourstory');
+
 Route::get('/download/form','DownloadController@form');
 
 // Routes that require a general log in

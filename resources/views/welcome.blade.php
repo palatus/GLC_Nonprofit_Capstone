@@ -13,7 +13,6 @@
         <link href = "{{ asset('/css/app.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/main.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
-        <link href = "{{ asset('/css/welcome.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 
         <!-- Styles -->
@@ -65,41 +64,63 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .top-buffer {
+	            margin-top: 20px;
+            }
+            .side-buffer {
+	            margin-right: 4px;
+                margin-left: 5px;
+            }
+            .img-top-buffer{
+                margin-top: 15px;
+            }
+            .card-text, .card-title{
+                color: black;
+            }
+            .carouselImg{
+                width: 100%;
+            }
         </style>
     </head>
-    <body>
+    <body style = 'color:white;background-color:{{$styleCode["5"]}}' class = ''>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
         <script src= "{{ mix('/js/app.js') }}"></script>
     
         
-
-        <!-- Carousel Start -->
-        <div id="topCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel1.jpg')}}" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel2.jpg')}}" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Third slide">
-                </div>
-            </div>
-        </div>
-        <!-- Carousel End -->
-
-        <!--Card Start -->
-        <div class="container top-buffer">
+        <div class="">
+            @include('nav')	
             
-            <!-- Events -->
-            <h2 class="text-center">Events</h2>
-                <!-- Row Start -->
+            <div class= "container-fluid mtopn innershadow" style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;'>
+       
+            <!-- Carousel Start -->
+                <div class="row">
+                    <div id="topCarousel" class="carousel slide top-buffer col-12 col-md-10 mx-auto" data-ride="carousel">
+                        <div class="shadow hoveringMidsection carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="carouselImg d-block w-100" src="{{url('/images/welcomeCarousel/carousel1.jpg')}}" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel2.jpg')}}" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Third slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Carousel End -->
+
+            <!--Card Start -->
+        
+            
+                <!-- Events -->
+                <h2 class="text-center top-buffer">Events</h2>
+                    <!-- Row Start -->
                 <div class="card-deck row">
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
                             <h5 class="card-title">Card title</h5>
@@ -107,8 +128,8 @@
                         </div>
                     </div>
 
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
                             <h5 class="card-title">Card title</h5>
@@ -116,8 +137,8 @@
                         </div>
                     </div>
 
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
                             <h5 class="card-title">Card title</h5>
@@ -127,13 +148,26 @@
 
                 </div>
                 <!-- Row End -->
-            
-            <!-- Newsletters -->
-            <h2 class="text-center top-buffer">Newsletters</h2>
-                <!-- Row Start -->
+
+                <div class="row">
+                    <button id= "eventButton" type="button" class="btn btn-primary btn-sm col-10 col-md-2 mx-auto top-buffer">More</button>
+                </div>
+
+                <!-- Newsletters -->
+                <h2 class="text-center top-buffer">Newsletters</h2>
+                    <!-- Row Start -->
                 <div class="card-deck row">
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
+                        <div class="card-body">
+                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
+                            <h5 class="card-title"> Card title</h5>
+                            <p class="card-text">Details?</p>            
+                        </div>
+                    </div>
+
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
                             <h5 class="card-title">Card title</h5>
@@ -141,17 +175,8 @@
                         </div>
                     </div>
 
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Details?</p>            
-                        </div>
-                    </div>
-
-                    <div class="card col-12 col-md-4">
-                        <img class="card-img-top" src="" alt="">
+                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src="" alt="">
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
                             <h5 class="card-title">Card title</h5>
@@ -161,7 +186,16 @@
 
                 </div>
                 <!-- Row End -->
+                <div class="row m-b-md">
+                    <button id="newsButton" type="button" class="btn btn-primary btn-sm col-10 col-md-2 mx-auto top-buffer">More</button>
+                </div>
+            </div>
+                
         </div>
+        
+        @include('footer')
+		
+		<div id = 'endSpace'></div>
 
 
 	<script>
