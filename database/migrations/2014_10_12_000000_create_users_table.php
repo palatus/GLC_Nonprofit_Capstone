@@ -28,6 +28,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             
+            // User public display info
+            $table->string('bio')->default("This user has not set a bio.");
+            $table->string('iconId')->default("icon.png");
+            
             $table->string('formId')->default("");
             
         });
@@ -38,6 +42,7 @@ class CreateUsersTable extends Migration
         $User->name='Root';
         $User->email = 'test@test.com';
         $User->password = bcrypt('123456');
+        $User->bio = 'This is root';
         $User->level = 3;
         $User->save();
         

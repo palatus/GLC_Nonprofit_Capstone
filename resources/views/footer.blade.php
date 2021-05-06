@@ -6,19 +6,15 @@
   <!-- Grid container -->
   <div id = 'fcontainer' class="container">
     <!-- Social media -->
+    
     <section class="mb-4 row ptoph">
       <!-- Facebook -->
       <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://www.facebook.com/george.cannon.98499" role="button">
           <i class="fab fa-facebook-f"></i>
       </a>
 
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="#!" role="button">
-          <i class="fab fa-twitter"></i>
-      </a>
-
       <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="#!" role="button">
+      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://Instagram.com/glchouse" role="button">
           <i class="fab fa-instagram"></i>
       </a>      
     </section>
@@ -49,6 +45,8 @@
                 </div>
             </div>
         </section>
+        
+       
    
     <!-- Section: Text -->
     

@@ -44,7 +44,7 @@
         		<div style = 'padding-bottom:1em;' class="col-md-12 text-center innershadow grad10">
         			
         		<div style = 'margin-top:2.5em; 'class = 'text-center'>
-        			<div style = 'color:#27262f; border: solid; width:75%; margin:auto; padding-bottom:4em; border-radius:1em;background-color:{{$styleCode["1"]}};' class = 'shadow'>
+        			<div style = 'color:#27262f; border: solid; width:69%; margin:auto; padding-bottom:4em; border-radius:1em;background-color:{{$styleCode["1"]}};' class = 'shadow'>
         			<div style = 'color:white;'>
             			<div style = ''>
                 			
@@ -57,26 +57,28 @@
                         			</div>
                         		</div>
                 			
-                			<h3 class="text-center mtoph mbottomh">
+                			<h3 style = 'width:66%; margin:auto;background-color:#62626d17; border: 2px solid #3b3f46; border-radius:5px;' class="text-center mtoph mbottomh vpad">
                 				Development Tools
                 			</h3>
-                			<hr style = 'width:66%; margin:auto;'>
+                			<hr style = 'width:66%; margin-left:auto;margin-right:auto;margin-bottom:-0.5em;'>
             			</div>
             			
             			<div class = 'mtop mbottomh' id= 'branchSelection'> 
             			
             			
-            			<div style = 'padding:1em;'>
-            			@if(count($users) > 0) 
-            				<button id = 'volunteerButton' type="button" class="btn btn-outline-primary">Review Pending Volunteers <span style = 'color:#ebbd34;'>({{count($users)}})</span></button>
-            			@else 
-            				<button id = 'volunteerButton' type="button" class="disabled btn btn-outline-danger">Review Pending Volunteers <span style = 'color:#ebbd34;'>(0)</span></button>
-            			@endif
-            			</div>
-            			
-            			<div style = 'padding-bottom:1em;'>
-                			<button id = 'eventButton' type="button" class="btn btn-outline-primary">Create Event</button>
-                			<button id = 'accountButton' type="button" class="btn btn-outline-primary">Create Account</button>
+            			<div style = 'width:66%; margin:auto;background-color:#62626d17; border: 2px solid #424242;' class = 'shadow' >
+                			<div style = 'padding:1em;'>
+                			@if(count($users) > 0) 
+                				<button id = 'volunteerButton' type="button" class="btn btn-primary">Review Pending Volunteers <span style = 'color:#ebbd34;'>({{count($users)}})</span></button>
+                			@else 
+                				<button id = 'volunteerButton' type="button" class="disabled btn btn-outline-danger">Review Pending Volunteers <span style = 'color:#ebbd34;'>(0)</span></button>
+                			@endif
+                			</div>
+                			
+                			<div style = 'padding-bottom:1em;'>
+                    			<button id = 'eventButton' type="button" class="btn btn-primary">Create Event</button>
+                    			<button id = 'accountButton' type="button" class="btn btn-primary">Create Account</button>
+                			</div>
             			</div>
             			
             			

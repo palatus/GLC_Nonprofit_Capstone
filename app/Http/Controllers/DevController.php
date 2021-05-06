@@ -117,8 +117,12 @@ class DevController extends Controller
         if($thisUser == null || $thisUser->level < 2){
             return back();
         }
-        
         $style=parent::getStyle();
+        
+        if(User::where('email','like','%'.$accountData[1].'%') -> first() != null){
+            return redirect('/dev')->with('error','This email is taken!')->with('styleCode' ,$style);
+        }
+       
         if($accountData[3] >= Auth::user()->level){
             return redirect('/dev')->with('error','You may only create an account with a lower permissions level than your own')->with('styleCode' ,$style);
         }
@@ -200,7 +204,7 @@ class DevController extends Controller
                    
                 case 1:
                     $result = $this->createAccount([request('name'),request('email'),request('password'),request('level')]);
-                    if($result == -1){
+                    if(is_numeric($result) && $result == -1){
                         return redirect('/dev')->with('error','Found Null Account Info')->with('styleCode' ,$style);
                     }
                     break;
@@ -210,8 +214,15 @@ class DevController extends Controller
                 
             }
             
-            return redirect('/dev')->with('mssg','Success');
+            if(!session('error')){
+                
+                return back()->with('mssg','Success');
             
+            } else {
+                
+                return back();
+                
+            }
         }
         
     }

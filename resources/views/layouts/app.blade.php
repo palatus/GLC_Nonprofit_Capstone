@@ -51,6 +51,11 @@ hr{
     border-color:grey;
 
 }
+li>a{
+
+    margin-top:0.25em;
+
+}
 .innershadow {
 	-moz-box-shadow: inset 0 0 10px #000000;
 	-webkit-box-shadow: inset 0 0 10px #000000;
@@ -93,11 +98,12 @@ a{
 
     <div id="app">
         <nav style = 'border-color:black;background-color:{{$styleCode["3"]}};'class="shadow navbar navbar-default navbar-static-top ">
-            <div class="container ">
-                <div class="navbar-header">
+            <div class=" ">
+            
+                <div  style = 'padding-bottom:0.5em;margin-bottom:1em;margin-top:-0.75em;' class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+                    <button style = 'margin-top:2.5em;' type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -105,12 +111,17 @@ a{
                     </button>
 
                     <!-- Branding Image -->
-                    <a style = 'color:white;' class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                    <div style = 'padding-left:1em;padding-right:2em;' style = ''>
+                    	<a href="/" class="navbar-brand  mr-auto"> <img
+                    		class="mbottom mtopn" id="logo" style ='color:white;display:inline-block;'
+                    		src="{{ url('/images/glcLogo.webp') }}" alt="Logo" /> <span
+                    		class="mbottom">GLC House of H.O.P.E</span>
+                    	</a>
+                	</div>
+                	
                 </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <div style = 'display:inline-block; padding-right:2em;' class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
@@ -119,22 +130,42 @@ a{
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                         
-                        <div style = 'padding-top:1em;'>
-								<a style = 'color:white;' href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                        </div>
+
+				
+				@if (Auth::user() != null && Auth::user()->level > 1)
+    			<li class="nav-item msides"><a class="transborder nav-link "
+    				href="/dev">Dev Tools</a></li>
+    				
+				@endif
+    			
+				@if (Auth::user() != null && Auth::user()->level == 1)
+    			<li class="nav-item msides"><a class="transborder nav-link "
+    				href="/events">Events</a></li>
+    				
+				@endif
+			
+			@if (Auth::user() != null && (Auth::user()->level == 0 || Auth::user()->level == 3))
+			<li class="nav-item msides"><a class="nav-link transborder" href="/volunteer">Get Involved</a></li>
+			
+			@endif
+			
+			<li class="nav-item msides"><a class="nav-link transborder" href="/contact">Contact Us</a>
+			</li>
+			
+				
+			<li style = 'margin-top:0.75em;' class="nav-item msides">
+				<button type="button" id="donateBtn"  onclick = "window.open('https://www.paypal.com/donate?token=rDujKMEqGkKzb3ZCHggV65xkCpDTppezTCmca9gcYj1WJbkYO9G74Jn7P7arWWBVs-12Mr1nmWMg0VME','_blank')" class="btn btn-outline-primary">Donate</button>
+			</li>
+				
+		
+
                                         
                         @endguest
                     </ul>

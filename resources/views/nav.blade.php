@@ -4,7 +4,7 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-md justify-content-center bordered">
+<nav style = 'border-color:black;' class="navbar navbar-expand-md justify-content-center bordered">
 	<a href="/" class="navbar-brand  mr-auto"> <img
 		class="float-left mbottom mtopn" id="logo"
 		src="{{ url('/images/glcLogo.webp') }}" alt="Logo" /> <span
@@ -37,7 +37,7 @@
     				<span style = 'font-size:2.25em;'>|</span>
 				@endif
     			
-			<li class="nav-item msides"><a class="nav-link transborder" href="/What We Do">What We Do</a></li>
+			<li class="nav-item msides"><a class="nav-link transborder" href="/what we do">What We Do</a></li>
 			<span style = 'font-size:2.25em;'>|</span>
 			
 			@if (Auth::user() != null && (Auth::user()->level == 0 || Auth::user()->level == 3))

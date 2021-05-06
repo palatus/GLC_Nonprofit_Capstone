@@ -20,7 +20,7 @@
 
         </style>
     </head>
-    <body style = 'color:white;background-color:{{$styleCode["6"]}}'>
+    <body style = 'color:white;background-color:{{$styleCode["6"]}}' class = ''>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
@@ -28,57 +28,59 @@
 
 		@include('nav')
         
-        <div style = 'width:90%;' class="mbottom container-fluid">
-        
-        	
-        	<div class="row">
-        		<div class="col-md-12">
-        		
-        			<h3 class="text-center cw mbottomh ptrigger">
-        				Our Volunteers
-        			</h3>
+        <div style = 'margin-top:-1.75em;margin-bottom:-2em; padding:2em;' class = 'innershadow'>
+            <div style = 'width:80%;' class="mbottom container-fluid shadow grad10">
+            
+            	
+            	<div class="row">
+            		<div class="col-md-12">
             		
-                    	@if(count($volunteers) == 0)
-                    		<div class = 'text-center mtoph mbottomh'>
-                    			<div>There are no active volunteers</div>
-                    		</div>
-                    	@else
-                        <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2);' class="text-center row mbottom mtoph ptop innershadow">
-                        
-    						@php ($i = 1)
-    						@php ($limit = 5)
-                    		@foreach($volunteers as $volunteer)
-        						
-        						<div class="col text-center mtoph pbottom mbottomh">
-        							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['img']}}');">
-                						<div class="text-center">
-                      									
+            			<h3 class="text-center cw mbottomh ptrigger">
+            				Our Volunteers
+            			</h3>
+                		
+                        	@if(count($volunteers) == 0)
+                        		<div class = 'text-center mtoph mbottomh'>
+                        			<div>There are no active volunteers</div>
+                        		</div>
+                        	@else
+                            <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2); width:85%; margin:auto;' class="text-center row mbottom mtoph ptop innershadow">
+                            
+        						@php ($i = 1)
+        						@php ($limit = 5)
+                        		@foreach($volunteers as $volunteer)
+            						
+            						<div class="col text-center mtoph pbottom mbottomh">
+            							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');">
+                    						<div class="text-center">
+                          									
+                    						</div>
                 						</div>
+                						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
             						</div>
-            						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
-        						</div>
-    						
-        						@if($i % $limit == 0)
-        							<div class="w-100"></div>
-        						@endif
-        						@if($loop->remaining == 0)
-            						@for($j = $i; $j<$limit; $j++)
-            							<div class="col"></div>
-            						@endfor
-        						@endif
         						
-        						@php ($i++)
-        						@if($i > $limit)
-        							@php ($i=1)
-        						@endif
-    						
-                    		@endforeach
-                    		
-                    	</div>
-                		@endif 
-                    
-        		</div>
-        	</div>
+            						@if($i % $limit == 0)
+            							<div class="w-100"></div>
+            						@endif
+            						@if($loop->remaining == 0)
+                						@for($j = $i; $j<$limit; $j++)
+                							<div class="col"></div>
+                						@endfor
+            						@endif
+            						
+            						@php ($i++)
+            						@if($i > $limit)
+            							@php ($i=1)
+            						@endif
+        						
+                        		@endforeach
+                        		
+                        	</div>
+                    		@endif 
+                        
+            		</div>
+            	</div>
+            </div>
         </div>
 		
 		<div class = 'mtoph'>
@@ -98,9 +100,11 @@
             }
 
             $(document).on('mouseover', '.box', function () {
+            
                 $('.vAction').css("opacity","0");
                 $ind = $(this).attr('id').replace(/\D/g,'');
                 $('#name'+$ind).css("opacity","1");
+                
             });
             $(document).on('mouseout', '.box', function () {
                 $('.vAction').css("opacity","1");

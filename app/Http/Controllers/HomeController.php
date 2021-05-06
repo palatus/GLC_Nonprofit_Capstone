@@ -25,6 +25,19 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     
+    public function setIcon($file_Name){
+        
+        $user = Auth::user();
+        if($user->level >= 1){
+            
+            $file_path = public_path(). "/resources/images/user/".$file_name;
+            return response()->download($file_path);
+            
+        }
+        return back();
+        
+    }
+    
     public function paginate($ticketsPerPage, $ticketData){
         
         $splitData = [];
@@ -77,10 +90,11 @@ class HomeController extends Controller
             $tickets = Ticket::where('closed', 0)->get();
             $tickets = $this->paginate($ticketsPerPage,$tickets);
             
-            return view('home',['tickets'=>$tickets,'styleCode'=>$style]);
+            return view('homeb',['tickets'=>$tickets,'styleCode'=>$style]);
             
         }
         
         return view('login',['styleCode'=>$style]);
     }
+    
 }

@@ -28,11 +28,11 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::get('/About Us', 'AboutUsController@index')->name('aboutus');
 
-Route::view('/What We Do', 'whatwedo',['styleCode'=>$style])->name('whatwedo');
+Route::view('/what we do', 'whatwedo',['styleCode'=>$style])->name('whatwedo');
 
 Route::get('/contact', 'ContactController@index')->name('contact');
 
-Route::get('/Volunteers', 'VolunteerController@index')->name('volunteers');
+Route::get('/volunteers', 'VolunteerController@index')->name('volunteers');
 
 Route::get('/download/form','DownloadController@form');
 
@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/ticket/{id}','TicketController@close');
     Route::get('/download/{file}','DownloadController@grab');
     
+    Route::post('/home/icon','UploadController@uploadIcon');
     Route::post('/dev','DevController@devAction');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
     Route::post('/ticket','TicketController@createTicket');

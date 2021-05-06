@@ -27,7 +27,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
         <script src= "{{ mix('/js/app.js') }}"></script>
  
-        @include('nav')		
+        @include('nav')
    
         <div style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;' class="container-fluid">
         	<div class="row">
@@ -38,176 +38,181 @@
         				
         			</h3>
         			
-        			<div style="width:800px; margin:0 auto;">
+        			<div style = 'background-color:#62626d17;' class="vpadh quartered shadow grad10">
+        			
+        				<div style = 'margin-top:-1em;'>
+                			<div class = 'vpad autosides'>
+                    			
+                                    <table class="tg mbottomh text-center autosides" >
+                                        <thead>
+                                          <tr>
+                                            <th class="tg-0lax">
+                                            	<button style = 'margin-left:1em;margin-right:1em;' id = 'cgbutton' type="button" class="btn btn-primary">Closed Events</button>
+                                            </th>
+                                            <th class="tg-0lax">
+                                            	<button id = 'ogbutton' type="button" class="btn btn-primary">Open Events</button>
+                                            </th>
+                                            <th class="tg-0lax">
+                                            	<button style = 'margin-left:1em;margin-right:1em;' id = 'pgbutton' type="button" class="btn btn-primary">Planned Events</button>
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                    </table>                            
+                                    
+                			</div>
+            			</div>
             			
-                            <table style = 'width:100%;margin-left:5.5em;' class="tg mbottomh">
-                                <thead>
-                                  <tr>
-                                    <th class="tg-0lax">
-                                    	<button id = 'cgbutton' type="button" class="btn btn-outline-primary">Closed Events</button>
-                                    </th>
-                                    <th class="tg-0lax">
-                                    	<button id = 'ogbutton' type="button" class="btn btn-outline-primary">Open Events</button>
-                                    </th>
-                                    <th class="tg-0lax">
-                                    	<button id = 'pgbutton' type="button" class="btn btn-outline-primary">Planned Events</button>
-                                    </th>
-                                  </tr>
-                                </thead>
-                            </table>                            
-                            
-        			</div>
-        			
-        			<div id='preamble' class = 'pbottomh ptoph'>
-        			
-        				<h2 class = 'mtm'> Select Any Event Category To View or Sign Up for An Event </h2>
-        			
-        			</div>
-
-					<div style = 'font-size:1.25em;' class = 'vmargin' id = 'eventDisplay'>
-					
-						<div id = 'subDisplay1'>
-
-							<div id = 'closedGroup' class = ''>
-							
-										@if(count($events['closed']) == 0)
-											<div style = 'font-size:2em;' class = 'cGroup center-text mtm' >
-												There Is No Event History Available
-											</div>
-										@endif
-										
-                                		@foreach($events['closed'] as $closed)
-                                		
-                                			<div class = 'center-text mbottomh ' >
-                                    			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow '>
-                                    			
-                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center ">
-                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
-                                                      
-													  <div class = 'bigtext'>{{$closed['name']}}</div>
-                                                        
-                                                      <div>
-  													  	<span>{{$closed['date']}}, {{$closed['year']}} &emsp; {{$closed['time']}} &horbar; {{$closed['time2']}}</span>
-                                                      </div>
-                                                      
-                                                      </div>
-                                                      <h2>EVENT OVER</h2>
-                                                          <div class="card-body mbh">
-                                                            <p class="card-text">{{$closed['description']}}</p>
-                                                          </div>
-                                                      </div>
-                                    			
-                                    			</div>
-                                    		</div>
+            			<div id='preamble' class = 'pbottomh ptoph'>
+            			
+            				<h2 class = 'mtm'> Select Any Event Category To View or Sign Up for An Event </h2>
+            			
+            			</div>
+    
+    					<div style = 'font-size:1.25em; background-color:#62626d17;' class = 'vmargin glcborderB vpadh' id = 'eventDisplay'>
+    					
+    						<div id = 'subDisplay1'>
+    
+    							<div id = 'closedGroup' class = ''>
+    							
+    										@if(count($events['closed']) == 0)
+    											<div style = 'font-size:2em;' class = 'cGroup center-text mtm' >
+    												There Is No Event History Available
+    											</div>
+    										@endif
+    										
+                                    		@foreach($events['closed'] as $closed)
                                     		
-                                		@endforeach
-							</div>
-							
-							<div id = 'soonGroup' class= ''>
-										@if(count($events['soon']) == 0)
-											<div style = 'font-size:2em;' class = 'sGroup center-text mtm' >
-												No Events Are Currently Open For Signup
-											</div>
-										@endif
-										
-                                		@foreach($events['now'] as $now)
-                                		
-                                			<div class = 'center-text mbottomh ' >
-                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
-                                    			
-                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
-                                                        <div class = 'bigtext'>{{$now['name']}} </div>
-                                                      <div>
-  													  	<span>{{$now['date']}} &emsp; {{$now['time']}} &horbar; {{$now['time2']}}</span>
-                                                      </div>
-                                                      </div>
-                                                      <div class="card-body mtm">
-                                                        <p class="card-text mtm pall mall">{{$now['description']}}</p>
-                                                        <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
-                                                        <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
-                                                      </div>
-                                                     </div>
-                                    			
-                                    			</div>
-                                    		</div>
-                                		@endforeach
-                                		@foreach($events['soon'] as $soon)
-                                		
-                                			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow '>
-                                    			
-                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10 " role="alert">
-                                                          <div class = 'bigtext '>{{$soon['name']}} </div>
+                                    			<div class = 'center-text mbottomh ' >
+                                        			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow'>
+                                        			
+                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center ">
+                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
+                                                          
+    													  <div class = 'bigtext'>{{$closed['name']}}</div>
+                                                            
                                                           <div>
-      													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
+      													  	<span>{{$closed['date']}}, {{$closed['year']}} &emsp; {{$closed['time']}} &horbar; {{$closed['time2']}}</span>
                                                           </div>
-                                                      </div>
-                                                      <div class="card-body mtm ">
-                                                      	<div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
-                                                      	
-                                                      		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
-                                                      	
-                                                      	</div>
-                                                        <p class="card-text mtm pbottomh ">{{$soon['description']}}</p>
-                                                        
-                                                        <a href="/events/{{$soon['id']}}" class="btn btn-outline-primary mtoph widthquarter ">Sign Up</a>
-                                                        
-                                                      </div>
-                                                     </div>
-                                    			
-                                    			</div>
-                                    		</div>
-                                		@endforeach
-                                		
-							</div>
-							
-							<div id = 'plannedGroup' class= ''>
-							
-										@if(count($events['planned']) == 0)
-											<div style = 'font-size:2em;' class = 'pGroup center-text mtm' >
-												No Events Are Currently Planned
-											</div>
-										@endif
-                                		@foreach($events['planned'] as $planned)
-                                		
-                                			<div class = 'center-text mbottomh' >
-                                    			<div style = 'color:white;' class = 'pGroup mtm width75 innershadow'>
-                                    			
-                                                    <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                      <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
-                                                        
-                                                        <div class = 'bigtext'>{{$planned['name']}} </div>
-                                                        
-                                                      <div>
-  													  	<span>{{$planned['date']}}, {{$planned['year']}} &emsp; {{$planned['time']}} &horbar; {{$planned['time2']}}</span>
-                                                      </div>
-                                                      
-                                                      </div>
-                                                      
-                                                      <div class="card-body mtm">
-                                                          <div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
-                                                          	
-                                                          		<div>{{$planned['regstered']}} of {{$planned->maxVolunteers}} volunteers</div>
-                                                          	
+                                                          
                                                           </div>
-                                                        <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
-                                                        <a href="/events/{{$planned['id']}}" class="btn btn-outline-primary mtoph widthquarter">Sign Up</a>
-                                                      </div>
-                                                      
-                                                    </div>
-                                    			
-                                    			</div>
-                                    		</div>
-                                    			
-                                		@endforeach
-							</div>
-							
-						</div>
-					
-						<div style = 'color:orange;'class = 'mall' id = 'msg'>{{ session('msg') }}</div>
-					
+                                                          <h2>EVENT OVER</h2>
+                                                              <div class="card-body mbh">
+                                                                <p class="card-text">{{$closed['description']}}</p>
+                                                              </div>
+                                                          </div>
+                                        			
+                                        			</div>
+                                        		</div>
+                                        		
+                                    		@endforeach
+    							</div>
+    							
+    							<div id = 'soonGroup' class= ''>
+    										@if(count($events['soon']) == 0)
+    											<div style = 'font-size:2em;' class = 'sGroup center-text mtm' >
+    												No Events Are Currently Open For Signup
+    											</div>
+    										@endif
+    										
+                                    		@foreach($events['now'] as $now)
+                                    		
+                                    			<div class = 'center-text mbottomh ' >
+                                        			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
+                                        			
+                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
+                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
+                                                            <div class = 'bigtext'>{{$now['name']}} </div>
+                                                          <div>
+      													  	<span>{{$now['date']}} &emsp; {{$now['time']}} &horbar; {{$now['time2']}}</span>
+                                                          </div>
+                                                          </div>
+                                                          <div class="card-body mtm">
+                                                            <p class="card-text mtm pall mall">{{$now['description']}}</p>
+                                                            <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
+                                                            <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
+                                                          </div>
+                                                         </div>
+                                        			
+                                        			</div>
+                                        		</div>
+                                    		@endforeach
+                                    		@foreach($events['soon'] as $soon)
+                                    		
+                                    			<div class = 'center-text mbottomh' >
+                                        			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow '>
+                                        			
+                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
+                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10 " role="alert">
+                                                              <div class = 'bigtext '>{{$soon['name']}} </div>
+                                                              <div>
+          													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="card-body mtm ">
+                                                          	<div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
+                                                          	
+                                                          		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
+                                                          	
+                                                          	</div>
+                                                            <p class="card-text mtm pbottomh ">{{$soon['description']}}</p>
+                                                            
+                                                            <a href="/events/{{$soon['id']}}" class="btn btn-primary mtoph widthquarter ">Sign Up</a>
+                                                            
+                                                          </div>
+                                                         </div>
+                                        			
+                                        			</div>
+                                        		</div>
+                                    		@endforeach
+                                    		
+    							</div>
+    							
+    							<div id = 'plannedGroup' class= ''>
+    							
+    										@if(count($events['planned']) == 0)
+    											<div style = 'font-size:2em;' class = 'pGroup center-text mtm' >
+    												No Events Are Currently Planned
+    											</div>
+    										@endif
+                                    		@foreach($events['planned'] as $planned)
+                                    		
+                                    			<div class = 'center-text mbottomh' >
+                                        			<div style = 'color:white;' class = 'pGroup mtm width75 innershadow'>
+                                        			
+                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
+                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
+                                                            
+                                                            <div class = 'bigtext'>{{$planned['name']}} </div>
+                                                            
+                                                          <div>
+      													  	<span>{{$planned['date']}}, {{$planned['year']}} &emsp; {{$planned['time']}} &horbar; {{$planned['time2']}}</span>
+                                                          </div>
+                                                          
+                                                          </div>
+                                                          
+                                                          <div class="card-body mtm">
+                                                              <div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
+                                                              	
+                                                              		<div>{{$planned['regstered']}} of {{$planned->maxVolunteers}} volunteers</div>
+                                                              	
+                                                              </div>
+                                                            <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
+                                                            <a href="/events/{{$planned['id']}}" class="btn btn-primary mtoph widthquarter">Sign Up</a>
+                                                          </div>
+                                                          
+                                                        </div>
+                                        			
+                                        			</div>
+                                        		</div>
+                                        			
+                                    		@endforeach
+    							</div>
+    							
+    						</div>
+    					
+    						<div style = 'color:orange;'class = 'mall' id = 'msg'>{{ session('msg') }}</div>
+    					
+    					</div>
 					</div>
 					
         <div id = 'helpInfo' class = 'hideme center-text mtm'>

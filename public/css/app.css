@@ -1551,6 +1551,7 @@ background: linear-gradient(to top, #716679, #59647f); /* W3C, IE 10+/ Edge, Fir
 background: #342635bd;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #342635bd, #3e2640bd);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to top, #342635bd, #3e2640bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-color:#44465e;
 }
 .borderedB{
 	border: 3px solid #222232; 
@@ -4512,8 +4513,7 @@ tbody.collapse.in {
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
-	text-decoration: none;
-	background-color: #eeeeee;
+	
 }
 
 .nav>li.disabled>a {
@@ -5028,6 +5028,51 @@ tbody.collapse.in {
 	margin-top: 14px;
 	margin-bottom: 14px;
 }
+.box {
+	position: relative;
+	display: inline-block;
+	width: 10em;
+	height: 10em;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	-webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.imgBg {
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-width: 100%;
+    max-height: 100%;
+    
+}
+a>i.fab{
+	
+	font-size: 2.5rem;
+	
+}
+label.control-label{
+	color:black;
+}
+a>i.fab:hover{
+
+	color:black;
+	
+}
+.vpad{
+	padding-top:1em;
+	padding-bottom:1em;
+}
+.vpadh{
+	padding-top:2em;
+	padding-bottom:2em;
+}
+.msides{
+	margin-left:1em;
+	margin-right:1em;
+}
 
 @media ( min-width : 768px) {
 	.navbar-text {
@@ -5056,7 +5101,7 @@ tbody.collapse.in {
 }
 
 .navbar-default .navbar-brand {
-	color: #777;
+	
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
@@ -5075,28 +5120,26 @@ tbody.collapse.in {
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
 	{
-	color: grey;
-	background-color: transparent;
+	
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
 	.navbar-default .navbar-nav>.active>a:focus {
-	color: #555;
-	background-color: #eeeeee;
+	
 }
 
 .navbar-default .navbar-nav>.disabled>a, .navbar-default .navbar-nav>.disabled>a:hover,
 	.navbar-default .navbar-nav>.disabled>a:focus {
-	color: #ccc;
-	background-color: transparent;
+	
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
 	.navbar-default .navbar-nav>.open>a:focus {
-	color: #555;
-	background-color: #eeeeee;
+	
 }
-
+#userIcon{
+	cursor: pointer;
+}
 @media ( max-width : 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
 		color: #777;
@@ -5119,7 +5162,31 @@ tbody.collapse.in {
 		background-color: transparent;
 	}
 }
+li{
+	padding-left: 1em !important;
+	padding-right: 1em !important;	
+}
+.transborder {
+	padding-left: 1em !important;
+	padding-right: 1em !important;
+	color: white;
+	-webkit-transition: all 0.25s 0s ease-out;
+	-moz-transition: all 0.25s 0s ease-out;
+	-o-transition: all 0.25s 0s ease-out;
+	transition: all 0.25s 0s ease-out;
+}
+.navbar>a {
+	color: white;
+	padding-left:1em;
+	padding-right:1em;
+}
 
+a:hover.nav-link {
+	background-color: grey;
+}
+.transborder:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
 .navbar-default .navbar-toggle {
 	border-color: #ddd;
 }
