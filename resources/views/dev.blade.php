@@ -134,7 +134,7 @@
                 				
                     				<div class = 'text-center mtoph mbottomh'>
                     				
-                                        <form id = 'eventform' action="/dev" method='POST'>
+                                        <form id = 'eventform' action="/dev" enctype='multipart/form-data' method='POST'>
                                         	{{ csrf_field() }}
                                         	<div class = 'text-center quarterwidth'>
                                               <label for="ename">Event Name:</label>
@@ -176,6 +176,11 @@
                                                             }
                                                         ?>
                                                         </select>
+                                                </div>
+                                                
+                                                <label for="imgUpload">Event Front Image</label>
+                                                <div style = 'margin-left:auto;'>
+                                                	<input id='imgUpload' accept=".png,.jpg,.jpeg" name="file" type='file'/>
                                                 </div>
                                                 
                                                 <input type="hidden" name="type" value="0">

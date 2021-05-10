@@ -146,6 +146,8 @@ class DevController extends Controller
      *
      */
     public function createEvent($eventData){
+
+
         
         $thisUser = Auth::user();
         if($thisUser == null || $thisUser->level < 2){
@@ -169,6 +171,16 @@ class DevController extends Controller
         $event->eventEnd = $eventData[4].' '.$eventData[5];
         $event->maxVolunteers = $eventData[6];
         
+        $file = $eventData[7];
+        $filename = time().'_'.'_icon';
+        $event->titleImageId = $filename;
+        
+        // File upload location
+        $location = 'images/events/';
+        
+        // Upload file
+        $file->move($location,$filename);
+        
         $event->save();
         error_log("Success: ".$eventData[0]." created!");
         
@@ -190,7 +202,7 @@ class DevController extends Controller
             switch ($type) {
                 
                 case 0:
-                    $result = $this->createEvent([request('ename'),request('desc'),request('event-start'),request('start-time'),request('event-end'),request('end-time'),request('maxVolunteers')]);
+                    $result = $this->createEvent([request('ename'),request('desc'),request('event-start'),request('start-time'),request('event-end'),request('end-time'),request('maxVolunteers'),request('file')]);
                     if($result == -1){
                         return redirect('/dev')->with('error','Date Input Incorrect')->with('styleCode' ,$style);
                     }

@@ -87,7 +87,7 @@
                                       {{ csrf_field() }}
                                       <div class="form-group">
                                         <label for="biochange">User Bio</label>
-                                        <textarea class="form-control" id="biochange" name = 'biochange' rows="3" placeholder='You havent set a bio, yet'>{{Auth::user()->bio}}</textarea>
+                                        <textarea class="form-control" id="biochange" name = 'biochange' rows="3" placeholder='You havent set a bio yet'>{{Auth::user()->bio}}</textarea>
                                       </div>
                                       <div class = 'vpad'>
                                       	<div id = 'biosave' style = 'padding-top:0.5em; width:90%;' class = 'btn btn-outline-primary'>
@@ -120,7 +120,7 @@
                     
             			<div style = 'margin-left:auto;margin-right:auto;padding-top:2em; color:orange; 'class = 'mall text-center' id = 'msg'>{{ session('msg') }}</div><hr>
             			
-                        <div style = 'margin-left:3em;'class="panel-heading">Welcome, @if(Auth::user() != null) {{Auth::user()->name}} @endif</div>
+                        <div style = 'margin-left:3em;font-size:1.25em;'class="panel-heading">Welcome, @if(Auth::user() != null) {{Auth::user()->name}} @endif</div>
             
                         <div class="panel-body">
                             
@@ -134,7 +134,7 @@
                 			<div class='text-center'>
                 						
                             	<div  class = ''>
-                            		<button id='continue' class="btn-primary big " style = 'padding-left:1em;padding-right:1em;'>Continue to Events</button>
+                            		<button id='continue' class="btn-primary big" style = 'padding-left:1em;padding-right:1em;'>Continue to Events</button>
                             	</div>
                             						
                             </div>

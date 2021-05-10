@@ -3064,7 +3064,7 @@ input[type=radio][disabled], input[type=radio].disabled, fieldset[disabled] inpu
 }
 
 input[type=file] {
-	display: block;
+ 
 }
 
 input[type=range] {

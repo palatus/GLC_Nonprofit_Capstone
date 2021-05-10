@@ -36,6 +36,9 @@
     				href="/events">Events</a></li>
     				<span style = 'font-size:2.25em;'>|</span>
 				@endif
+    		
+    		<li class="nav-item msides"><a class="nav-link transborder" href="/volunteers">Volunteers</a></li>
+			<span style = 'font-size:2.25em;'>|</span>
     			
 			<li class="nav-item msides"><a class="nav-link transborder" href="/what we do">What We Do</a></li>
 			<span style = 'font-size:2.25em;'>|</span>

@@ -98,7 +98,7 @@
             <div class= "container-fluid mtopn innershadow" style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;'>
        
             <!-- Carousel Start -->
-                <div class="row">
+                <div class="row vpad">
                     <div id="topCarousel" class="carousel slide top-buffer col-12 col-md-10 mx-auto" data-ride="carousel">
                         <div class="shadow hoveringMidsection carousel-inner">
                             <div class="carousel-item active">
@@ -119,79 +119,55 @@
         
             
                 <!-- Events -->
-                <h2 class="text-center top-buffer">Events</h2>
+                <h2 class="text-center top-buffer vpad">Events</h2>
                     <!-- Row Start -->
-                <div class="card-deck row">
+                    
+                <div style = 'padding-bottom:4em;' class="card-deck row">
+                
+                @if(count($events['soon']) > 0)
+                @php($url = '/images/events/')
+                @php($id = $events['soon'][0]['titleImageId'])
                     <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
                         <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Details?</p>            
+                            <p class="card-text"><small class="text-muted">{{$events['soon'][0]['date'].' @ '.$events['soon'][0]['time'].'—'.$events['soon'][0]['time2']}}</small></p>
+                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][0]['name'])}}</h5>
+                            <p class="card-text">{{$events['soon'][0]['description']}}</p>            
                         </div>
                     </div>
-
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                @else
+                    
+                    <div style = 'margin:auto;' class= 'text-center'>
+                    	<div> There are no open events </div>
+                    </div>
+                    
+				@endif
+				@if(count($events['soon']) > 1)
+				@php($url = '/images/events/')
+				@php($id = $events['soon'][1]['titleImageId'])
+                   <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
                         <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Details?</p>            
+                            <p class="card-text"><small class="text-muted">{{$events['soon'][1]['date'].' @ '.$events['soon'][1]['time'].'—'.$events['soon'][1]['time2']}}</small></p>
+                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][1]['name'])}}</h5>
+                            <p class="card-text">{{$events['soon'][1]['description']}}</p>            
                         </div>
                     </div>
-
+				@endif
+				@if(count($events['soon']) > 2)
+				@php($url = '/images/events/')
+				@php($id = $events['soon'][2]['titleImageId'])
                     <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
                         <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Details?</p>            
+                            <p class="card-text"><small class="text-muted">{{$events['soon'][2]['date'].' @ '.$events['soon'][2]['time'].'—'.$events['soon'][2]['time2']}}</small></p>
+                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][2]['name'])}}</h5>
+                            <p class="card-text">{{$events['soon'][2]['description']}}</p>            
                         </div>
                     </div>
-
+				@endif
                 </div>
-                <!-- Row End -->
-
-                <div class="row">
-                    <button id= "eventButton" type="button" class="btn btn-primary btn-sm col-10 col-md-2 mx-auto top-buffer">More</button>
-                </div>
-
-                <!-- Newsletters -->
-                <h2 class="text-center top-buffer">Newsletters</h2>
-                    <!-- Row Start -->
-                <div class="card-deck row">
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title"> Card title</h5>
-                            <p class="card-text">Details?</p>            
-                        </div>
-                    </div>
-
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="{{url('/images/welcomeCarousel/carousel3.jpg')}}" alt="">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Details?</p>            
-                        </div>
-                    </div>
-
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src="" alt="">
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">Date Uploaded</small></p>
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">No image here. Details?</p>            
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Row End -->
-                <div class="row m-b-md">
-                    <button id="newsButton" type="button" class="btn btn-primary btn-sm col-10 col-md-2 mx-auto top-buffer">More</button>
-                </div>
+               
             </div>
                 
         </div>

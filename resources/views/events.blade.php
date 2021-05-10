@@ -85,21 +85,23 @@
                                     			<div class = 'center-text mbottomh ' >
                                         			<div style = 'color:white;' class = 'cGroup mtm width75 innershadow'>
                                         			
-                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center ">
-                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
+                                                        <div style = 'color:white;border:4px solid black;background-image: url("/images/events/{{$closed["titleImageId"]}}");' class="card text-center eventCard">
+                                                          <div style= '' class="alphaBG" role="alert">
                                                           
-    													  <div class = 'bigtext'>{{$closed['name']}}</div>
-                                                            
-                                                          <div>
-      													  	<span>{{$closed['date']}}, {{$closed['year']}} &emsp; {{$closed['time']}} &horbar; {{$closed['time2']}}</span>
-                                                          </div>
-                                                          
-                                                          </div>
-                                                          <h2>EVENT OVER</h2>
-                                                              <div class="card-body mbh">
-                                                                <p class="card-text">{{$closed['description']}}</p>
+        													  <div class = 'bigtext'>{{str_replace('_', ' ', $closed['name'])}}</div>
+                                                                
+                                                              <div>
+          													  	<span>{{$closed['date']}}, {{$closed['year']}} &emsp; {{$closed['time']}} &horbar; {{$closed['time2']}}</span>
                                                               </div>
+                                                              <hr style = 'width:75%; margin:auto; margin-top:1em;'>
+                                                              <h2>EVENT OVER</h2>
+                                                              <div class="card-body mbh">
+                                                                    
+                                                              </div>
+                                                                  
                                                           </div>
+                                                          
+                                                       </div>
                                         			
                                         			</div>
                                         		</div>
@@ -119,18 +121,19 @@
                                     			<div class = 'center-text mbottomh ' >
                                         			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow'>
                                         			
-                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
-                                                            <div class = 'bigtext'>{{$now['name']}} </div>
+                                                        <div style = 'color:white;border:4px solid black;background-image: url("/images/events/{{$now["titleImageId"]}}");' class="card text-center eventCard">
+                                                          <div style= '' class="alphaBG" role="alert">
+                                                            <div class = 'bigtext'>{{str_replace('_', ' ', $now['name'])}} </div>
                                                           <div>
       													  	<span>{{$now['date']}} &emsp; {{$now['time']}} &horbar; {{$now['time2']}}</span>
                                                           </div>
-                                                          </div>
                                                           <div class="card-body mtm">
-                                                            <p class="card-text mtm pall mall">{{$now['description']}}</p>
+                                                            <p class="card-text mtm pall mall quartered">{{$now['description']}}</p>
                                                             <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
                                                             <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
                                                           </div>
+                                                          </div>
+                                                          
                                                          </div>
                                         			
                                         			</div>
@@ -138,31 +141,38 @@
                                     		@endforeach
                                     		@foreach($events['soon'] as $soon)
                                     		
-                                    			<div class = 'center-text mbottomh' >
+                                    			<div class = 'center-text  ' >
+                                    				
                                         			<div style = 'color:white;' class = 'sGroup mtm width75 innershadow '>
                                         			
-                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10 " role="alert">
-                                                              <div class = 'bigtext '>{{$soon['name']}} </div>
-                                                              <div>
-          													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
+                                                        <div style = 'color:white;border:4px solid black;background-image: url("/images/events/{{$soon["titleImageId"]}}");' class="card text-center eventCard ">
+                                                          <div style= '' class="alphaBG" role="alert">
+                                                          		<div>
+                                                                  <div class = 'bigtext '>{{str_replace('_', ' ', $soon['name'])}} </div>
+                                                                  <div>
+              													  	<span>{{$soon['date']}} &emsp; {{$soon['time']}} &horbar; {{$soon['time2']}}</span>
+                                                                  </div>
                                                               </div>
-                                                          </div>
-                                                          <div class="card-body mtm ">
+                                                              
+                                                              <div class="card-body mtm ">
                                                           	<div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
                                                           	
                                                           		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
                                                           	
                                                           	</div>
-                                                            <p class="card-text mtm pbottomh ">{{$soon['description']}}</p>
+                                                            <p class="card-text mtm pbottomh quartered">{{$soon['description']}}</p>
                                                             
-                                                            <a href="/events/{{$soon['id']}}" class="btn btn-primary mtoph widthquarter ">Sign Up</a>
+                                                            <a style = 'background-color:#3465a4;'href="/events/{{$soon['id']}}" class="btn btn-primary mtoph widthquarter ">Sign Up</a>
                                                             
                                                           </div>
+                                                              
+                                                          </div>
+                                                          
                                                          </div>
                                         			
                                         			</div>
                                         		</div>
+                                        		
                                     		@endforeach
                                     		
     							</div>
@@ -179,26 +189,26 @@
                                     			<div class = 'center-text mbottomh' >
                                         			<div style = 'color:white;' class = 'pGroup mtm width75 innershadow'>
                                         			
-                                                        <div style = 'background-color:{{$styleCode["4"]}}' class="card text-center">
-                                                          <div style= 'color:white;' class="alert alert-dark card-header grad10" role="alert">
+                                                        <div style = 'color:white;border:4px solid black;background-image: url("/images/events/{{$planned["titleImageId"]}}");' class="card text-center eventCard">
+                                                          <div style= '' class="alphaBG" role="alert">
                                                             
-                                                            <div class = 'bigtext'>{{$planned['name']}} </div>
+                                                            <div class = 'bigtext'>{{str_replace('_', ' ', $planned['name'])}} </div>
                                                             
                                                           <div>
       													  	<span>{{$planned['date']}}, {{$planned['year']}} &emsp; {{$planned['time']}} &horbar; {{$planned['time2']}}</span>
                                                           </div>
-                                                          
-                                                          </div>
-                                                          
                                                           <div class="card-body mtm">
                                                               <div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
                                                               	
                                                               		<div>{{$planned['regstered']}} of {{$planned->maxVolunteers}} volunteers</div>
                                                               	
                                                               </div>
-                                                            <p class="card-text mtm pbottomh">{{$planned['description']}}</p>
-                                                            <a href="/events/{{$planned['id']}}" class="btn btn-primary mtoph widthquarter">Sign Up</a>
+                                                            <p class="card-text mtm pbottomh quartered">{{$planned['description']}}</p>
+                                                            <a style = 'background-color:#3465a4;' href="/events/{{$planned['id']}}" class="btn btn-primary mtoph widthquarter">Sign Up</a>
                                                           </div>
+                                                          </div>
+                                                          
+                                                          
                                                           
                                                         </div>
                                         			

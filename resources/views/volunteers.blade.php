@@ -20,7 +20,7 @@
 
         </style>
     </head>
-    <body style = 'color:white;background-color:{{$styleCode["6"]}}' class = ''>
+    <body style = 'color:white;background-color:{{$styleCode["1"]}}' class = ''>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
@@ -28,8 +28,8 @@
 
 		@include('nav')
         
-        <div style = 'margin-top:-1.75em;margin-bottom:-2em; padding:2em;' class = 'innershadow'>
-            <div style = 'width:80%;' class="mbottom container-fluid shadow grad10">
+        <div style = 'margin-top:-1.75em;padding:2em;' class = 'innershadow'>
+            <div style = 'width:80%;' class="mbottom mtop container-fluid shadow grad10">
             
             	
             	<div class="row">
@@ -66,7 +66,7 @@
                                           
                                             <div> <h5 class="modal-title" id='bioModalLabel{{$i.$volunteer["name"]}}'>{{$volunteer['name']}}'s Bio</h5> </div>
                                             
-                                            <div class = 'innershadow' style =  'margin:auto;margin-left:4em;padding:1em;'>
+                                            <div class = '' style =  'margin:auto;margin-left:4em;padding:1em;'>
                                                 <div class = "boxB imgBg" id = '{{$i.$volunteer["name"]}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
                                             </div>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -143,7 +143,7 @@
                                           
                                             <div> <h5 class="modal-title" id='bioModalLabel{{$i.$facilitator["name"]}}'>{{$facilitator['name']}}'s Bio</h5> </div>
                                             
-                                            <div class = 'innershadow' style =  'margin:auto;margin-left:4em;padding:1em;'>
+                                            <div class = '' style =  'margin:auto;margin-left:4em;padding:1em;'>
                                                 <div class = "boxB imgBg" id = '{{$i.$facilitator["name"]}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
                                             </div>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">

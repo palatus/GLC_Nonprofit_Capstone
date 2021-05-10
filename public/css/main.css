@@ -275,6 +275,33 @@ a:hover.nav-link {
 	border-radius: 5px;
 	
 }
+.alphaBG{
+	
+	background-color:rgba(0,0,0,0.6);
+  	backdrop-filter: blur(4px);
+  	
+}
+.card:hover{
+	color:white;
+}
+.eventCard{
+	
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-position: center; 
+  	object-fit: cover;
+  	text-shadow: 4px 4px #00000011;
+  
+}
+.eventCardB{
+	
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-position: center; 
+  	object-fit: contain;
+  	text-shadow: 4px 4px #00000011;
+  
+}
 .box {
 	position: relative;
 	display: inline-block;
