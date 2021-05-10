@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             
             // User public display info
-            $table->string('bio')->default("This user has not set a bio.");
+            $table->string('bio')->default("");
             $table->string('iconId')->default("icon.png");
             
             $table->string('formId')->default("");

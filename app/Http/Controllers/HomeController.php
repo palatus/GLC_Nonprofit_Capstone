@@ -70,6 +70,20 @@ class HomeController extends Controller
         return ['data'=>$splitData,'length'=>count($ticketData),'groupSize'=>($group+1)];
         
     }
+    public function setBio(){
+        
+        $newBio = request('biochange');
+        $user = Auth::user();
+        if($user->level == 0 || !is_string($newBio)){
+            return back();
+        }
+        
+        $user->bio = $newBio;
+        $user->save();
+        
+        return back()->with(['msg'=>'Success']);
+        
+    }
     public function logout(){
         
         Auth::logout();

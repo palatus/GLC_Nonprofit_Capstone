@@ -272,6 +272,7 @@ a:hover.nav-link {
 .hoveringMidsection:hover{
 	
 	background-color:#333657;
+	border-radius: 5px;
 	
 }
 .box {
@@ -287,6 +288,7 @@ a:hover.nav-link {
 	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .boxB{
+	
 	position: relative;
 	display: inline-block;
 	width: 10em;
@@ -296,6 +298,7 @@ a:hover.nav-link {
 	border-radius: 5px;
 	-webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	
 }
 .watchOpacity {
 	transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);

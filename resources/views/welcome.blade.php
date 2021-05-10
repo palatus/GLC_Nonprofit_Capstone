@@ -75,7 +75,10 @@
                 margin-top: 15px;
             }
             .card-text, .card-title{
+            
                 color: black;
+                border-radius:1px;
+                
             }
             .carouselImg{
                 width: 100%;

@@ -4,7 +4,7 @@
     }
 </style>
 
-<nav style = 'border-color:black;' class="navbar navbar-expand-md justify-content-center bordered">
+<nav style = 'border-color:black;' class="navbar navbar-expand-md justify-content-center">
 	<a href="/" class="navbar-brand  mr-auto"> <img
 		class="float-left mbottom mtopn" id="logo"
 		src="{{ url('/images/glcLogo.webp') }}" alt="Logo" /> <span

@@ -51,13 +51,37 @@
                         		@foreach($volunteers as $volunteer)
             						
             						<div class="col text-center mtoph pbottom mbottomh">
-            							<div class = "box imgBg" id = 'volunteer{{$loop->iteration}}' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');">
+            							<div class = "box imgBg" id = '{{$i.$volunteer["name"]}}' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');">
                     						<div class="text-center">
                           									
                     						</div>
                 						</div>
-                						<div id = 'name{{$loop->iteration}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
+                						<div id = 'name{{$i.$volunteer["name"]}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
             						</div>
+            						
+                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.$volunteer["name"]}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.$volunteer["name"]}}' aria-hidden="true">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                          
+                                            <div> <h5 class="modal-title" id='bioModalLabel{{$i.$volunteer["name"]}}'>{{$volunteer['name']}}'s Bio</h5> </div>
+                                            
+                                            <div class = 'innershadow' style =  'margin:auto;margin-left:4em;padding:1em;'>
+                                                <div class = "boxB imgBg" id = '{{$i.$volunteer["name"]}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
+                                            </div>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body quartered">
+                                            {{$volunteer['bio']}}
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
         						
             						@if($i % $limit == 0)
             							<div class="w-100"></div>
@@ -81,12 +105,85 @@
             		</div>
             	</div>
             </div>
+            
+            <div style = 'width:80%;' class="mbottomh container-fluid shadow grad10">
+            
+            	
+            	<div class="row">
+            		<div class="col-md-12">
+            		
+            			<h3 class="text-center cw mbottomh ptrigger">
+            				Our Facilitators
+            			</h3>
+                		
+                        	@if(count($facilitators) == 0)
+                        		<div class = 'text-center mtoph mbottomh'>
+                        			<div>There are no active facilitators</div>
+                        		</div>
+                        	@else
+                            <div style = 'border-style: solid; border-color:#5c6267; background-color:rgba(0, 0, 0, 0.2); width:85%; margin:auto;' class="text-center row mbottom mtoph ptop innershadow">
+                            
+        						@php ($i = 1)
+        						@php ($limit = 5)
+                        		@foreach($facilitators as $facilitator)
+            						
+            						<div class="col text-center mtoph pbottom mbottomh">
+            							<div class = "box imgBg" id = '{{$i.$facilitator["name"]}}' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');">
+                    						<div class="text-center">
+                          									
+                    						</div>
+                						</div>
+                						<div id = 'name{{$i.$facilitator["name"]}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$facilitator['name']}}</div>
+            						</div>
+        						
+                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.$facilitator["name"]}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.$facilitator["name"]}}' aria-hidden="true">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                          
+                                            <div> <h5 class="modal-title" id='bioModalLabel{{$i.$facilitator["name"]}}'>{{$facilitator['name']}}'s Bio</h5> </div>
+                                            
+                                            <div class = 'innershadow' style =  'margin:auto;margin-left:4em;padding:1em;'>
+                                                <div class = "boxB imgBg" id = '{{$i.$facilitator["name"]}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
+                                            </div>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body quartered">
+                                            {{$facilitator['bio']}}
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+        						
+            						@if($i % $limit == 0)
+            							<div class="w-100"></div>
+            						@endif
+            						@if($loop->remaining == 0)
+                						@for($j = $i; $j<$limit; $j++)
+                							<div class="col"></div>
+                						@endfor
+            						@endif
+            						
+            						@php ($i++)
+            						@if($i > $limit)
+            							@php ($i=1)
+            						@endif
+        						
+                        		@endforeach
+                        		
+                        	</div>
+                    		@endif 
+                        
+            		</div>
+            	</div>
+            </div>
+            
         </div>
-		
-		<div class = 'mtoph'>
-		
-		
-		</div>
 		
 		@include('footer')
         		
@@ -99,13 +196,25 @@
                 }
             }
 
+
             $(document).on('mouseover', '.box', function () {
             
                 $('.vAction').css("opacity","0");
-                $ind = $(this).attr('id').replace(/\D/g,'');
+                $ind = $(this).attr('id');
+                
                 $('#name'+$ind).css("opacity","1");
                 
             });
+            
+            $(document).on('click', '.box', function () {
+            
+            	$hoverId = $(this).attr('id');
+            	
+                $('#bioModal'+$hoverId).modal('show');
+                
+            });
+            
+            
             $(document).on('mouseout', '.box', function () {
                 $('.vAction').css("opacity","1");
             });

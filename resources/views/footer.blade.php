@@ -16,7 +16,13 @@
       <!-- Instagram -->
       <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://Instagram.com/glchouse" role="button">
           <i class="fab fa-instagram"></i>
-      </a>      
+      </a>    
+      
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://Twitter.com/glc4girls1" role="button">
+          <i class="fab fa-twitter"></i>
+      </a>
+      
     </section>
 
     <!-- Sponsors -->

@@ -53,7 +53,7 @@
     					
     						<div>
     						
-                                GLC House of Hope for Girls
+                                GLC House of H.O.P.E for Girls
 
                                 
     						</div>

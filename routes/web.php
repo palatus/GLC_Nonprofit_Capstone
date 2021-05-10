@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::post('/home/logout', 'HomeController@logout');
     Route::post('/home/icon','UploadController@uploadIcon');
+    Route::post('/home/bio','HomeController@setBio');
     Route::post('/dev','DevController@devAction');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
     Route::post('/ticket','TicketController@createTicket');
