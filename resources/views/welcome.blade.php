@@ -17,12 +17,13 @@
 
         <!-- Styles -->
         <style>
+        
             html, body {
-                font-family: 'Raleway', sans-serif;
+
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-                color:grey;
+               
             }
 
             .full-height {
@@ -132,6 +133,7 @@
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">{{$events['soon'][0]['date'].' @ '.$events['soon'][0]['time'].'—'.$events['soon'][0]['time2']}}</small></p>
                             <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][0]['name'])}}</h5>
+                            <hr>
                             <p class="card-text">{{$events['soon'][0]['description']}}</p>            
                         </div>
                     </div>
@@ -150,6 +152,7 @@
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">{{$events['soon'][1]['date'].' @ '.$events['soon'][1]['time'].'—'.$events['soon'][1]['time2']}}</small></p>
                             <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][1]['name'])}}</h5>
+                            <hr>
                             <p class="card-text">{{$events['soon'][1]['description']}}</p>            
                         </div>
                     </div>
@@ -162,6 +165,7 @@
                         <div class="card-body">
                             <p class="card-text"><small class="text-muted">{{$events['soon'][2]['date'].' @ '.$events['soon'][2]['time'].'—'.$events['soon'][2]['time2']}}</small></p>
                             <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][2]['name'])}}</h5>
+                            <hr>
                             <p class="card-text">{{$events['soon'][2]['description']}}</p>            
                         </div>
                     </div>

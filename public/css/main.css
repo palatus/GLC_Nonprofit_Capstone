@@ -27,6 +27,17 @@ textarea{
 	margin-left:auto;
 	margin-right:auto;
 }
+.cursorPointer{
+	cursor:pointer; 
+}
+.leftpadded{
+	padding-left:2em;
+}
+.hoverBlue:hover{
+	
+	color:#3465a4;
+	
+}
 .autosides{
 	margin-left:auto;
 	margin-right:auto;
@@ -288,7 +299,7 @@ a:hover.nav-link {
 	
   	background-repeat: no-repeat;
   	background-attachment: fixed;
-  	background-position: center; 
+  	background-position: center;
   	object-fit: cover;
   	text-shadow: 4px 4px #00000011;
   

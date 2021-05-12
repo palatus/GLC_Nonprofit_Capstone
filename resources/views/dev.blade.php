@@ -78,6 +78,7 @@
                 			<div style = 'padding-bottom:1em;'>
                     			<button id = 'eventButton' type="button" class="btn btn-primary">Create Event</button>
                     			<button id = 'accountButton' type="button" class="btn btn-primary">Create Account</button>
+                    			<button id = 'messageButton' type="button" class="btn btn-primary">Message User</button>
                 			</div>
             			</div>
             			
@@ -182,6 +183,10 @@
                                                 <div style = 'margin-left:auto;'>
                                                 	<input id='imgUpload' accept=".png,.jpg,.jpeg" name="file" type='file'/>
                                                 </div>
+                                                <br>
+ 												<label for="mapsUrl">Google Maps URL:</label>
+                                              	<br>
+                                              	<input class = 'shadow mtop mbottomh' type="text" id="mapsUrl" name="mapsUrl" required><br><br>
                                                 
                                                 <input type="hidden" name="type" value="0">
                                                 

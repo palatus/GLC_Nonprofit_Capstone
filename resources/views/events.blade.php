@@ -131,6 +131,9 @@
                                                             <p class="card-text mtm pall mall quartered">{{$now['description']}}</p>
                                                             <div style = 'font-size:2em;font-style:bold;'>Happening Now!</div>
                                                             <div style = 'font-size:1em;font-style:bold;'>Signup Closed</div>
+                                                            
+                                                            <div class = 'vpad'><a onclick="window.open(this.href,'_blank');return false;" href = '{{$soon->mapsUrl}}'>Get Directions</a></div>
+                                                            
                                                           </div>
                                                           </div>
                                                           
@@ -158,11 +161,44 @@
                                                           	<div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
                                                           	
                                                           		<div>{{$soon['regstered']}} of {{$soon->maxVolunteers}} volunteers</div>
+                                                          		<div><a onclick="window.open(this.href,'_blank');return false;" href = '{{$soon->mapsUrl}}'>Get Directions</a></div>
                                                           	
                                                           	</div>
-                                                            <p class="card-text mtm pbottomh quartered">{{$soon['description']}}</p>
+                                                          	
+                                                          	
+                                                            	<p class="card-text mtm pbottomh quartered">{{$soon['description']}} 
+                                                            	
+                                                            		@if(Auth::user()->level > 1)
+                                                            		
+                                                            		<span class = 'editdesc' id = 'edit{{$soon["id"]}}'>
+                                                            			<i class="far fa-edit hoverBlue"></i>
+                                                            		</span>
+                                                            		
+                                                                    <form class = 'hidden' id = 'eventform{{$soon["id"]}}' action="/dev/event/update/{{$soon['id']}}" method='POST'>
+                                                                    	{{ csrf_field() }}
+                                                                    	
+                                                                          
+                                                                          <label for="desc">Update Description:</label>
+                                                                          <br>
+                                                                          <div class = 'mbottomh mtop'>
+                                										  	<textarea style = 'color:black;'class = 'form-control shadow pall' rows="6" cols="50%" name="desc" id = 'desc' form='eventform{{$soon["id"]}}' placeholder = 'Enter text here...' required>{{$soon["description"]}}</textarea>
+                                										  </div>
+                                										  
+                                                                            
+                                                                            <input type="hidden" name="type" value="0">
+                                                                            
+                                										  <br>
+                                                                          <input type="submit" class="btn btn-outline-primary" value="Submit">
+                                                                      	  <div id = 'cancel{{$soon["id"]}}' class = 'btn btn-outline-primary updateCancel'>Cancel</div>
+                                                                      	
+                                                                    </form>
+                                                            		
+                                                            		@endif
+                                                            	
+                                                            	</p>
                                                             
-                                                            <a style = 'background-color:#3465a4;'href="/events/{{$soon['id']}}" class="btn btn-primary mtoph widthquarter ">Sign Up</a>
+                                                            
+                                                            <a style = 'background-color:#3465a4;'  href="/events/{{$soon['id']}}" class="btn btn-primary mtoph widthquarter ">Sign Up</a>
                                                             
                                                           </div>
                                                               
@@ -201,6 +237,7 @@
                                                               <div class =  'text-left ' style = 'padding-left:3em;font-size:1.25em;'>
                                                               	
                                                               		<div>{{$planned['regstered']}} of {{$planned->maxVolunteers}} volunteers</div>
+                                                              		<div><a onclick="window.open(this.href,'_blank');return false;" href = '{{$planned->mapsUrl}}'>Get Directions</a></div>
                                                               	
                                                               </div>
                                                             <p class="card-text mtm pbottomh quartered">{{$planned['description']}}</p>
@@ -303,7 +340,20 @@
                         $(document).ready(function() {
                           init();
                         });
-                                    
+						$(document).on('click', '.editdesc', function () {
+                        	
+							$id = $(this).attr('id').substring(4);
+							$('#eventform'+$id).removeClass('hidden');
+							
+                            
+                        });  
+						$(document).on('click', '.updateCancel', function () {
+                        	
+							$id = $(this).attr('id').substring(6);
+							$('#eventform'+$id).addClass('hidden');
+							
+                            
+                        });   
                         $(document).on('click', '#cgbutton', function () {
                         	
 							setGroups([1,0,0]);

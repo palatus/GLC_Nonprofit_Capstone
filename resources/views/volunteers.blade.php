@@ -51,27 +51,31 @@
                         		@foreach($volunteers as $volunteer)
             						
             						<div class="col text-center mtoph pbottom mbottomh">
-            							<div class = "box imgBg" id = '{{$i.$volunteer["name"]}}' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');">
+            							<div class = "box imgBg @if(strlen($volunteer['bio']) > 0) cursorPointer @endif" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');">
                     						<div class="text-center">
                           									
                     						</div>
                 						</div>
-                						<div id = 'name{{$i.$volunteer["name"]}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
+                						<div id = 'name{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$volunteer['name']}}</div>
             						</div>
             						
-                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.$volunteer["name"]}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.$volunteer["name"]}}' aria-hidden="true">
+                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}' aria-hidden="true">
                                       <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header">
                                           
-                                            <div> <h5 class="modal-title" id='bioModalLabel{{$i.$volunteer["name"]}}'>{{$volunteer['name']}}'s Bio</h5> </div>
-                                            
-                                            <div class = '' style =  'margin:auto;margin-left:4em;padding:1em;'>
-                                                <div class = "boxB imgBg" id = '{{$i.$volunteer["name"]}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
+                                          	<div class= 'vpad'>
+                                                <div> <h5 class="modal-title text-left leftpadded" id='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}'>{{$volunteer['name']}}'s Bio</h5> </div>
+                                                
+                                                <div class = 'vpad' style =  'margin:auto;margin-left:7.5em;padding:1em;padding-top:2em;'>
+                                                    <div class = "boxB imgBg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
+                                                </div>
                                             </div>
+                                            
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                             </button>
+                                            
                                           </div>
                                           <div class="modal-body quartered">
                                             {{$volunteer['bio']}}
@@ -128,24 +132,27 @@
                         		@foreach($facilitators as $facilitator)
             						
             						<div class="col text-center mtoph pbottom mbottomh">
-            							<div class = "box imgBg" id = '{{$i.$facilitator["name"]}}' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');">
+            							<div class = "box imgBg @if(strlen($facilitator['bio']) > 0) cursorPointer @endif" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');">
                     						<div class="text-center">
                           									
                     						</div>
                 						</div>
-                						<div id = 'name{{$i.$facilitator["name"]}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$facilitator['name']}}</div>
+                						<div id = 'name{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}' style = 'font-size:1.25em;' class = 'mtoph vAction'>{{$facilitator['name']}}</div>
             						</div>
         						
-                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.$facilitator["name"]}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.$facilitator["name"]}}' aria-hidden="true">
+                                    <div style = 'color:black; font-size:1.25em;' class="modal fade grad10" id='bioModal{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}' tabindex="-1" role="dialog" aria-labelledby='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}' aria-hidden="true">
                                       <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header">
                                           
-                                            <div> <h5 class="modal-title" id='bioModalLabel{{$i.$facilitator["name"]}}'>{{$facilitator['name']}}'s Bio</h5> </div>
-                                            
-                                            <div class = '' style =  'margin:auto;margin-left:4em;padding:1em;'>
-                                                <div class = "boxB imgBg" id = '{{$i.$facilitator["name"]}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
+                                            <div class= 'vpad'>
+                                                <div> <h5 class="modal-title text-left leftpadded" id='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}'>{{$facilitator['name']}}'s Bio</h5> </div>
+                                                
+                                                <div class = '' style =  'margin:auto;margin-left:7.5em;padding:1em;padding-top:2em;'>
+                                                    <div class = "boxB imgBg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
+                                                </div>
                                             </div>
+                                            
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                             </button>
@@ -209,7 +216,6 @@
             $(document).on('click', '.box', function () {
             
             	$hoverId = $(this).attr('id');
-            	
                 $('#bioModal'+$hoverId).modal('show');
                 
             });

@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/home/icon','UploadController@uploadIcon');
     Route::post('/home/bio','HomeController@setBio');
     Route::post('/dev','DevController@devAction');
+    Route::post('/dev/event/update/{id}','DevController@updateEvent');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
     Route::post('/ticket','TicketController@createTicket');
     

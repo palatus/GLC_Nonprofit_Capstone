@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use App\Event;
 use App\User;
+use Hamcrest\Type\IsNumeric;
 
 class DevController extends Controller
 {
@@ -142,13 +143,39 @@ class DevController extends Controller
         
     }
     
+    public function updateEvent($id){
+        
+        $user = Auth::user();
+        $type = request('type');
+        $style=parent::getStyle();
+        if($user == null || $user->level < 2 || !is_numeric($type)){
+            return back();
+        }
+        
+        $event = Event::find($id);
+        
+        
+        switch ($type){
+            
+            case 0:
+                $desc = request('desc');
+                $event->description = $desc;
+                $event->save();
+                break;
+            
+            default:
+            
+        }
+        
+        return back()->with('msg','Update Successful!')->with('styleCode' ,$style);
+        
+    }
+    
     /*  Creates an event if given post data is well formed
      *
      */
     public function createEvent($eventData){
 
-
-        
         $thisUser = Auth::user();
         if($thisUser == null || $thisUser->level < 2){
             return back();
@@ -170,10 +197,13 @@ class DevController extends Controller
         $event->eventBegin = $eventData[2].' '.$eventData[3];
         $event->eventEnd = $eventData[4].' '.$eventData[5];
         $event->maxVolunteers = $eventData[6];
+        $event->mapsUrl = $eventData[8];
         
         $file = $eventData[7];
         $filename = time().'_'.'_icon';
         $event->titleImageId = $filename;
+        
+        
         
         // File upload location
         $location = 'images/events/';
@@ -202,7 +232,7 @@ class DevController extends Controller
             switch ($type) {
                 
                 case 0:
-                    $result = $this->createEvent([request('ename'),request('desc'),request('event-start'),request('start-time'),request('event-end'),request('end-time'),request('maxVolunteers'),request('file')]);
+                    $result = $this->createEvent([request('ename'),request('desc'),request('event-start'),request('start-time'),request('event-end'),request('end-time'),request('maxVolunteers'),request('file'),request('mapsUrl')]);
                     if($result == -1){
                         return redirect('/dev')->with('error','Date Input Incorrect')->with('styleCode' ,$style);
                     }
