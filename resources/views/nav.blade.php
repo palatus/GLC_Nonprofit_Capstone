@@ -4,6 +4,9 @@
     }
 </style>
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+
 <nav style = 'border-color:black;' class="navbar navbar-expand-md justify-content-center">
 	<a href="/" class="navbar-brand  mr-auto"> <img
 		class="float-left mbottom mtopn" id="logo"

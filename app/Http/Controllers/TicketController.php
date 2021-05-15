@@ -11,23 +11,43 @@ class TicketController extends Controller{
     public function close($id){
 
         $ticket = Ticket::find($id);
-        $user = User::find($ticket->userId);
         
-        if($user == null || Auth::user() == null || Auth::user()->level < 2){
+        $user = User::find($ticket->userId);
+        $thisUser = Auth::user();
+        
+        $rId = $ticket->recipientId;
+        $bypass = false;
+        
+        // Need not authorize the user, they own this ticket
+        if($rId === $thisUser->id){
+            $bypass = true;
+        }
+        
+        if($user == null || $ticket == null){
             return back();
         }
-        if($ticket == null){
-            return back();
+        if(!$bypass){
+            
+            if(Auth::user() == null || Auth::user()->level < 2){
+                return back();
+            }
+            
         }
         if($ticket->closed){
-            return back()->with('msg','That ticket is already closed');
+            if($bypass){
+                return back();
+            } else {
+                return back()->with('msg','That ticket is already closed');
+            }
         }
         
         // Close the ticket
         $ticket->closed = 1;
         $ticket->save();
         
-        
+        if($bypass){
+            return back();
+        }
         return back()->with('msg','Ticket '.$ticket->id.' closed. Don\'t forget to email the user about their issue! ('.$user->email.')');
         
     }

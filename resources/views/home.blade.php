@@ -149,7 +149,7 @@
                         
                     <div style = 'color:white;'>
                     
-                		<div style = 'margin-left:2em; padding-top:0.5em;' class='text-left'><h2>@if(Auth::user()->level>=2)Ticket @else Message @endif Center</h2></div><hr>
+                		<div style = 'margin-left:2em; padding-top:0.5em;' class='text-left'><h2>@if(Auth::user()->level>=2)Ticket @else Message @endif Center</h2></div><br>
                 		
                 		<div id = 'innerSection' style = 'padding-bottom:0.5em;'>
                 		
@@ -259,13 +259,60 @@
                     			</div>
                     		@endif
                     	
-                    	@else
-                    	
-                    		<div class = 'mall'>
-                				<div> No Messages to Display </div>
-                			</div>
-                    	
-                		@endif
+                        	@else
+                        	
+                        		@if(isset($messages) && $messages != null)
+                            		<div class = 'mall'>
+                            		   
+            							@php $numMessages = $messages['length']; @endphp
+                                		
+                                		@if($numMessages == 0)
+                                		
+        									<div class = 'mall'>
+                                            	<div> No Messages to Display </div>
+                                            </div>	
+                                			
+                                		@else
+            
+            								
+            								<div id = 'style-2' class = 'grad10 bioImg quartered scrollColorA innershadow ' style = 'overflow:scroll;height:555px;background-color:{{$styleCode['1']}}';'>
+            								
+                                				@foreach($messages['data'] as $messageGroup)
+                                				
+                                					@foreach($messageGroup as $message)
+                                        					
+                                        				
+            											<div style = 'background-color:{{$styleCode['1']}}' class = 'mall bordered quartered innershadow pbottomh'>
+            											
+            												<div class = 'text-right'>
+            													<div onclick=" window.location.href='/ticket/{{$message['ticket']->id}}'" style = 'margin-top:1em;margin-right:1.5em;margin-bottom:-2em;border: 2px solid #861f1d;' class = 'btn btn-outline-danger' >X</div>
+            												</div>
+            												
+            												<div style = 'margin-top:2em;' >Message From: {{$message['name']}}</div>
+            												<div style = 'font-size:0.75em;' >Recieved On: {{$message['ticket']->created_at}}</div>
+            												<hr class = 'thirds'>
+                                                        	<div style = 'background-color:{{$styleCode['2']}}' class = 'mbottomh thirds vpad bioImg shadow'>{{$message['ticket']->message}}</div>
+                                                        	
+                                                        </div>
+                                					
+                                					@endforeach
+                                				
+                                				@endforeach
+                                				
+                            				</div>
+                            				
+                            			@endif
+                        				
+                        			</div>
+                        		@else
+                        		
+                            		<div class = 'mall'>
+                                    	<div> No Messages to Display </div>
+                                    </div>	
+                                    
+                    			@endif
+                        	
+                    		@endif
                 		
                 		</div>
                 		

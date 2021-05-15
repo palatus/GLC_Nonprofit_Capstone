@@ -61,12 +61,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/dev/event/update/{id}','DevController@updateEvent');
     Route::post('/volunteer','VolunteeringFormController@processRequest');
     Route::post('/ticket','TicketController@createTicket');
+    Route::post('/message','DevController@message');
     
     
 });
 
-// Create all the extra routes needed for db integration
-Route::resource('events','EventsController');
 
 
 // POSTS

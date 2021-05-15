@@ -68,7 +68,7 @@
                                                 <div> <h5 class="modal-title text-left leftpadded" id='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}'>{{$volunteer['name']}}'s Bio</h5> </div>
                                                 
                                                 <div class = 'vpad' style =  'margin:auto;margin-left:7.5em;padding:1em;padding-top:2em;'>
-                                                    <div class = "boxB imgBg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
+                                                    <div class = "boxB imgBg bioImg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $volunteer["name"]))}}Icon' style = "background-image: url('/images/user/{{$volunteer['iconId']}}');"></div>
                                                 </div>
                                             </div>
                                             
@@ -149,7 +149,7 @@
                                                 <div> <h5 class="modal-title text-left leftpadded" id='bioModalLabel{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}'>{{$facilitator['name']}}'s Bio</h5> </div>
                                                 
                                                 <div class = '' style =  'margin:auto;margin-left:7.5em;padding:1em;padding-top:2em;'>
-                                                    <div class = "boxB imgBg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
+                                                    <div class = "boxB imgBg bioImg" id = '{{$i.preg_replace("~,~","_",preg_replace("/\s+/","_", $facilitator["name"]))}}Icon' style = "background-image: url('/images/user/{{$facilitator['iconId']}}');"></div>
                                                 </div>
                                             </div>
                                             

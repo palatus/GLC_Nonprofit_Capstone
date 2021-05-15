@@ -93,24 +93,28 @@ class HomeController extends Controller
     }
     public function index()
     {
-        
+       
         if(Auth::check()){
             
             $style=parent::getStyle();
             $user = Auth::user();
+            $ticketsPerPage = 1;
+            
+            $messages = Ticket::where('closed', 0)->where('recipientId',$user->id)->get();
+            $messages = $this->paginate($ticketsPerPage,$messages);
             
             // Non-admin view data
             if($user->level < 2){
-                return view('home',['styleCode'=>$style]);
+                return view('home',['messages'=>$messages,'styleCode'=>$style]);
             }
             
             // Get all open tickets if user is an admin
             // Closed tickets still remain in the db
-            $ticketsPerPage = 1;
-            $tickets = Ticket::where('closed', 0)->get();
+            
+            $tickets = Ticket::where('closed', 0)->where('recipientId',-1)->get();
             $tickets = $this->paginate($ticketsPerPage,$tickets);
             
-            return view('home',['tickets'=>$tickets,'styleCode'=>$style]);
+            return view('home',['messages'=>$messages,'tickets'=>$tickets,'styleCode'=>$style]);
             
         }
         

@@ -50,7 +50,7 @@
                 			
                     			<div style = 'max-width: 50%; margin-left:auto; margin-right:auto; padding-top:4em;' class = 'text-center'>
                         			<div id = 'mssg' style = 'color:#3ed115' class = 'shadow'>
-                        				{{ session('mssg') }}
+                        				{{ session('msg') }}
                         			</div>
                         			<div id = 'error' style = 'color:#d13a34' class = 'shadow'>
                         				{{ session('error') }}
@@ -166,17 +166,21 @@
                                                 <div class = 'mall'>
                                                     <label for="limit">Volunteer Limit</label>
     												<br>
-                                                        <select id = maxVolunteers name="maxVolunteers" form="eventform">
-                                                        <option value=0>No Limit</option>
-                                                        <?php
-                                                            for ($i=1; $i<=250; $i++)
-                                                            {
-                                                                ?>
-                                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
-                                                                <?php
-                                                            }
-                                                        ?>
+    												
+                                                        <select  id = maxVolunteers name="maxVolunteers" form="eventform">
+                                                        
+                                                            <option style = 'color:black;' value=0>No Limit</option>
+                                                            <?php
+                                                                for ($i=1; $i<=250; $i++)
+                                                                {
+                                                                    ?>
+                                                                        <option style = 'color:black;' value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                                    <?php
+                                                                }
+                                                            ?>
+                                                            
                                                         </select>
+                                                        
                                                 </div>
                                                 
                                                 <label for="imgUpload">Event Front Image</label>
@@ -234,14 +238,74 @@
                                           	</div>
                                         </form>
                     				</div>
-                    				</div>
+                    			</div>
                 				
-                				</div>
-                				</div>
-            				</div>
+								<div id = 'MessageSection'>  
+                				
+                    				<div class = 'text-center  mbottomh'>
+                    				
+                                        <form id = 'messageForm' action="/message" method='POST'>
+                                        
+                                            	{{ csrf_field() }}
+                                            	<div class = 'text-center quarterwidth'>
+                                                  
+                                                  	 <div class = 'vpad'>Select User ID ({{count($messageList)}})</div>
+                                                     <div class = 'thirds' id = 'idSelectArea'>
+                                                            
+														<select  id = 'rId' name="rId" form="messageForm">
+														
+															<option style = 'color:black;' value="-1" selected disabled>ID List</option>
+															@foreach($messageList as $user)
+                                                            	
+                                                            	@if(Auth::user()->id != $user->id)
+                                                            	
+                                                            		<option style = 'color:black;' value="{{$user->id}}">{{$user->id}}</option>
+                                                            		
+                                                            	@endif
+                                                            	
+                                                            @endforeach
+                                                            
+                                                        </select>
+                                                      
+                                                     </div>
+                                                     
+                                                     @foreach($messageList as $user)
+                                                     	
+                                                     	<div style = 'margin-top:1em;'class = 'bordered thirds usercard hidden vpad' id = 'UserCard{{$user->id}}'>
+                                                     	
+                                                     		<div>{{$user->name}}</div>
+                                                     		<div>{{$user->email}}</div>
+                                                     	
+                                                     	</div>
+                                                     
+													 @endforeach
+                                                      
+                                                     <div style = 'margin-top:1em;' class = 'vpad' id = 'sendArea'>
+                                                     
+             											  <label for="desc">Message to User:</label>
+                                                          <br>
+                                                          <div class = 'mbottomh mtop'>
+                										  	<textarea class = 'shadow pall' rows="6" cols="50%" name="msg" id = 'msg' form="messageForm" placeholder = 'Enter message here...' required></textarea>
+                										  </div>
+                										  
+                										  <input type="submit" class="btn btn-outline-primary" value="Submit">
+                										  
+            										 </div>
+            										 
+                                                      
+                                                  
+                                              	</div>
+                                              	
+                                        </form>
+                    				</div>
+                    			</div>
+                				
+                			</div>
+                		</div>
+            		</div>
             			
-            			</div>
-        			</div>
+            	</div>
+        	</div>
 					
         <div id = 'helpInfo' class = 'hideme center-text mtoph mbottomh'>
 
@@ -266,28 +330,53 @@
 							} else {
 								$('#VolunteerSection').hide(0);
 							}
+							if(disableCode[3]){
+								$('#MessageSection').show(0);
+							} else {
+								$('#MessageSection').hide(0);
+							}
 							
-							if(disableCode[0] || disableCode[1] || disableCode[2]){
+							if(disableCode[0] || disableCode[1] || disableCode[2] || disableCode[3]){
 								$('#sectionSection').show(0);
-							} else if(!disableCode[0] && !disableCode[1] && !disableCode[2]) {
+							} else if(!disableCode[0] && !disableCode[1] && !disableCode[2] && !disableCode[3]) {
 								$('#sectionSection').hide(0);
 							}
 						
 						}
 						
+ 						$(document).on('change', '#rId', function () {
+                        
+                        	$thisId = $(this).val();
+                        	$('.usercard').addClass('hidden');
+							$('#UserCard'+$thisId).removeClass('hidden');
+                            
+                        });
+ 						$(document).on('click', '#rId', function () {
+                        
+                        	$thisId = $(this).val();
+                        	$('.usercard').addClass('hidden');
+							$('#UserCard'+$thisId).removeClass('hidden');
+                            
+                        });
+                        							
  						$(document).on('click', '#mssg,#error', function () {
                         
 							$(this).css('opacity','0');
                             
                         });			
- 						$(document).on('click', '#eventButton', function () {
+ 						$(document).on('click', '#messageButton', function () {
                         
-							sectionEnabler([true,false,false]);
+							sectionEnabler([false,false,false,true]);
+                            
+                        });
+                        $(document).on('click', '#eventButton', function () {
+                        
+							sectionEnabler([true,false,false,false]);
                             
                         });
  						$(document).on('click', '#accountButton', function () {
                         
-							sectionEnabler([false,true,false]);
+							sectionEnabler([false,true,false,false]);
                             
                         });
                         
@@ -296,7 +385,7 @@
      						$(document).on('click', '#volunteerButton', function () {
                             
                             	
-    							sectionEnabler([false,false,true]);
+    							sectionEnabler([false,false,true,false]);
     							
                                 
                             });

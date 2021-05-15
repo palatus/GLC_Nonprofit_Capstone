@@ -15,11 +15,15 @@
         <link href = "{{ asset('/css/hidden.css') }}" rel="stylesheet" />
         <link href = "{{ asset('/css/footer.css') }}" rel="stylesheet" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+
         <!-- Styles -->
         <style>
         
             html, body {
 
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -98,8 +102,21 @@
             
             <div class= "container-fluid mtopn innershadow" style = 'background-color:{{$styleCode["1"]}}; margin-top:-1.75em;'>
        
+               <div>
+               
+               		<div style = 'font-size:2.5em;' class = 'padTopBig text-center'>GLC House of H.O.P.E Event Sign Up Portal</div>
+               		@guest 
+
+    					<div class = 'text-center'> You are encouraged to <span ><a class = 'hoverBlue' href = '/register'>Sign Up</a></span> or <span><a href = '/login'>Login</a></span> if interested in volunteering </div>
+    
+    					<hr class = 'thirds'>
+
+					@endguest
+               		
+               </div>
+       
             <!-- Carousel Start -->
-                <div class="row vpad">
+                <div class="row padTopHuge">
                     <div id="topCarousel" class="carousel slide top-buffer col-12 col-md-10 mx-auto" data-ride="carousel">
                         <div class="shadow hoveringMidsection carousel-inner">
                             <div class="carousel-item active">
@@ -120,56 +137,56 @@
         
             
                 <!-- Events -->
-                <h2 class="text-center top-buffer vpad">Events</h2>
+                <h2 class="text-center top-buffer vpad">Upcoming Events</h2>
                     <!-- Row Start -->
                     
-                <div style = 'padding-bottom:4em;' class="card-deck row">
+                <div style = 'padding-bottom:4em; font-size:1.25em;' class="card-deck row">
                 
-                @if(count($events['soon']) > 0)
-                @php($url = '/images/events/')
-                @php($id = $events['soon'][0]['titleImageId'])
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">{{$events['soon'][0]['date'].' @ '.$events['soon'][0]['time'].'—'.$events['soon'][0]['time2']}}</small></p>
-                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][0]['name'])}}</h5>
-                            <hr>
-                            <p class="card-text">{{$events['soon'][0]['description']}}</p>            
+                    @if(count($events['soon']) > 0)
+                    @php($url = '/images/events/')
+                    @php($id = $events['soon'][0]['titleImageId'])
+                        <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                            <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">{{$events['soon'][0]['date'].' @ '.$events['soon'][0]['time'].'—'.$events['soon'][0]['time2']}}</small></p>
+                                <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][0]['name'])}}</h5>
+                                <hr>
+                                <p class=" blacktext">{{$events['soon'][0]['description']}}</p>            
+                            </div>
                         </div>
-                    </div>
-                @else
-                    
-                    <div style = 'margin:auto;' class= 'text-center'>
-                    	<div> There are no open events </div>
-                    </div>
-                    
-				@endif
-				@if(count($events['soon']) > 1)
-				@php($url = '/images/events/')
-				@php($id = $events['soon'][1]['titleImageId'])
-                   <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">{{$events['soon'][1]['date'].' @ '.$events['soon'][1]['time'].'—'.$events['soon'][1]['time2']}}</small></p>
-                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][1]['name'])}}</h5>
-                            <hr>
-                            <p class="card-text">{{$events['soon'][1]['description']}}</p>            
+                    @else
+                        
+                        <div style = 'margin:auto;' class= 'text-center'>
+                        	<div> There are no open events </div>
                         </div>
-                    </div>
-				@endif
-				@if(count($events['soon']) > 2)
-				@php($url = '/images/events/')
-				@php($id = $events['soon'][2]['titleImageId'])
-                    <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
-                        <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
-                        <div class="card-body">
-                            <p class="card-text"><small class="text-muted">{{$events['soon'][2]['date'].' @ '.$events['soon'][2]['time'].'—'.$events['soon'][2]['time2']}}</small></p>
-                            <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][2]['name'])}}</h5>
-                            <hr>
-                            <p class="card-text">{{$events['soon'][2]['description']}}</p>            
+                        
+    				@endif
+    				@if(count($events['soon']) > 1)
+    				@php($url = '/images/events/')
+    				@php($id = $events['soon'][1]['titleImageId'])
+                       <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                            <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">{{$events['soon'][1]['date'].' @ '.$events['soon'][1]['time'].'—'.$events['soon'][1]['time2']}}</small></p>
+                                <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][1]['name'])}}</h5>
+                                <hr>
+                                <p class=" blacktext">{{$events['soon'][1]['description']}}</p>            
+                            </div>
                         </div>
-                    </div>
-				@endif
+    				@endif
+    				@if(count($events['soon']) > 2)
+    				@php($url = '/images/events/')
+    				@php($id = $events['soon'][2]['titleImageId'])
+                        <div class="card col-10 col-md-3 side-buffer mx-auto shadow hoveringMidsection">
+                            <img class="card-img-top img-top-buffer" src = {{url($url.$id)}}>
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">{{$events['soon'][2]['date'].' @ '.$events['soon'][2]['time'].'—'.$events['soon'][2]['time2']}}</small></p>
+                                <h5 class="card-title">{{str_replace('_', ' ', $events['soon'][2]['name'])}}</h5>
+                                <hr>
+                                <p class="blacktext">{{$events['soon'][2]['description']}}</p>            
+                            </div>
+                        </div>
+    				@endif
                 </div>
                
             </div>
@@ -194,8 +211,8 @@
             	document.getElementsByTagName("html")[0].style.visibility = "visible";
             });            
             
-            $('div a').addClass(['introHover']);
-            $('div a').parent().addClass(['hoverRoots','aline']);
+            $('div>a').addClass(['introHover']);
+            $('div>a').parent().addClass(['hoverRoots','aline']);
 
     	}
                                     

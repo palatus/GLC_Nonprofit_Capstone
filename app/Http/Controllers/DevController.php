@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\File;
 use App\Event;
 use App\User;
 use Hamcrest\Type\IsNumeric;
+use App\Ticket;
 
 class DevController extends Controller
 {
@@ -51,7 +52,7 @@ class DevController extends Controller
                     $user->save();
                     // Submit ticket to user about this issue
                     
-                    return redirect()->back()->with('mssg', 'The user was denied successfully')->with('styleCode', $style);
+                    return redirect()->back()->with('msg', 'The user was denied successfully')->with('styleCode', $style);
                     
                 } else {
                     
@@ -97,7 +98,7 @@ class DevController extends Controller
                 // Submit ticket about success
                 
                 
-                return redirect('/dev')->with('mssg', $user->name.' is now a volunteer level user!')->with('styleCode', $style);
+                return redirect('/dev')->with('msg', $user->name.' is now a volunteer level user!')->with('styleCode', $style);
                 
             } else {
 
@@ -258,7 +259,7 @@ class DevController extends Controller
             
             if(!session('error')){
                 
-                return back()->with('mssg','Success');
+                return back()->with('msg','Success');
             
             } else {
                 
@@ -266,6 +267,31 @@ class DevController extends Controller
                 
             }
         }
+        
+    }
+    
+    public function message(){
+        
+        $user = Auth::user();
+        if($user == null || $user->level == 0){
+            return back();
+        }
+        
+        $msg = request('msg');
+        $rId = request('rId');
+        if(!is_string($msg) || !is_numeric($rId)){
+            return back();
+        }
+        
+        $ticket = new Ticket();
+        $ticket->recipientId = $rId;
+        $ticket->userId = $user->id;
+        $ticket->message = $msg;
+        $ticket->save();
+        
+        error_log($user->name.' message to '.User::find($rId)->name.' ('.$msg.')');
+        
+        return back()->with('msg','Message Sent!');
         
     }
     
@@ -280,7 +306,9 @@ class DevController extends Controller
             // defined as a user of level 0 with a submitted form file
             $users = User::where('formId', '!=', '')->where('level',0)->get();
             
-            return view('dev',['styleCode' => $style,'users'=>$users]);
+            $messageList = User::where('id','>',0)->get();
+            
+            return view('dev',['styleCode' => $style,'users'=>$users,'messageList'=>$messageList]);
             
         }
         

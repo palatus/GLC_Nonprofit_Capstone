@@ -291,6 +291,8 @@
                         	$('#preamble').hide(1);
                         	
                             bgroup(groupcode);
+                            $('#error').css('opacity','0');
+                            $('#msg').css('opacity','0');
                             
                         };
                         function bgroup(groupcode){
