@@ -7,6 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## This Project
+
+This is the final build created for a non-profit, GLC House of Hope.
+Working from Laravel, we were able to complete a working website used for managing data for locally held events and sign ups.
+The project was completed in conjunction with Arcadia University requirements.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
