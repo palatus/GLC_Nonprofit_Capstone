@@ -10,8 +10,10 @@
 ## This Project
 
 This is the final build created for a non-profit, GLC House of Hope.
-Working from Laravel, we were able to complete a working website used for managing data for locally held events and sign ups.
+Working from Laravel, we were able to complete a working website used for managing data for locally held events and sign up systems.
+Data is accessed with use of MySql server: Users, Events, Tickets, Volunteers, etc.
 The project was completed in conjunction with Arcadia University requirements.
+Rules regarding sign ups and volunteer registration were created to fit client needs.
 
 ## About Laravel
 
